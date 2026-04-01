@@ -64,7 +64,7 @@
 
         nav a:hover { color: var(--rosa-escuro); }
 
-        /* 2. BANNER EDITÁVEL */
+        /* 2. BANNER */
         .hero {
             height: 55vh;
             display: flex;
@@ -76,8 +76,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            /* O degradê branco está aqui. Ele busca o arquivo banner.jpg na pasta do GitHub */
-            background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('banner.jpg');
+            background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('banner.png');
         }
 
         .hero h2 { 
@@ -90,7 +89,7 @@
         section { padding: 60px 10%; text-align: center; }
         h3 { font-family: 'Dancing Script', cursive; font-size: 3rem; margin-bottom: 25px; color: var(--rosa-escuro); }
 
-        /* 3. MINHA HISTÓRIA (COM SLIDER) */
+        /* 3. HISTÓRIA (SLIDER) */
         .sobre-container {
             display: flex;
             align-items: center;
@@ -125,7 +124,7 @@
 
         .sobre-texto { flex: 2; }
 
-        /* 4. DOIS CARDÁPIOS LADO A LADO */
+        /* 4. CARDÁPIOS */
         .cardapio-section {
             background-color: var(--branco);
             padding: 50px 10%;
@@ -151,8 +150,6 @@
             font-weight: bold;
             font-size: 1.1rem;
             transition: 0.3s;
-            border: none;
-            cursor: pointer;
             text-align: center;
         }
 
@@ -233,7 +230,7 @@
 
     <header>
         <a href="#" class="logo-group">
-            <img src="img/cecilogo.png" alt="Logo Ceci Doces Gourmet">
+            <img src="cecilogo.png" alt="Logo Ceci Doces Gourmet">
             <h1>Ceci Doces Gourmet</h1>
         </a>
         <nav>
@@ -253,12 +250,12 @@
         <h3>Nossa Doce História</h3>
         <div class="sobre-container">
             <div class="sobre-imagem" id="slider-historia">
-                <img src="hist1.jpg" class="active" alt="Minha História 1">
-                <img src="hist2.jpg" alt="Minha História 2">
-                <img src="hist3.jpg" alt="Minha História 3">
+                <img src="hist1.png" class="active" alt="História 1">
+                <img src="hist2.png" alt="História 2">
+                <img src="hist3.png" alt="História 3">
             </div>
             <div class="sobre-texto">
-                <p>[CONTE SUA HISTÓRIA AQUI: Fale sobre a produção artesanal em Curitiba, as maçãs do amor e como a Ceci Doces Gourmet cresceu!]</p>
+                <p>Nossa paixão por criar doces inesquecíveis começou em Curitiba, unindo técnica artesanal e os melhores ingredientes para adoçar os momentos mais especiais da sua vida.</p>
             </div>
         </div>
     </section>
@@ -267,116 +264,26 @@
         <h3>Nossos Cardápios</h3>
         <p>Clique abaixo para visualizar nossas opções:</p>
         <div class="btn-group">
-            <a href="link-do-cardapio-doces.pdf" target="_blank" class="btn">📖 Cardápio Doces e Bolos</a>
-            <a href="link-do-cardapio-pascoa.pdf" target="_blank" class="btn btn-pascoa">🐰 Páscoa 2026</a>
+            <a href="link-do-seu-cardapio-fixo.pdf" target="_blank" class="btn">📖 Cardápio Doces e Bolos</a>
+            <a href="link-do-seu-cardapio-pascoa.pdf" target="_blank" class="btn btn-pascoa">🐰 Páscoa 2026</a>
         </div>
     </div>
 
     <section id="galeria">
         <h3>Nossas Delícias</h3>
         <div class="galeria-menu">
-            <button class="tab-btn active" onclick="abrirGaleria(event, 'suspiros')">Suspiros</button>
-            <button class="tab-btn" onclick="abrirGaleria(event, 'bolos')">Bolos Festivos</button>
+            <button class="tab-btn active" onclick="abrirGaleria(event, 'bolos')">Bolos Festivos</button>
             <button class="tab-btn" onclick="abrirGaleria(event, 'brigadeiros')">Brigadeiros</button>
             <button class="tab-btn" onclick="abrirGaleria(event, 'macas')">Maçãs do Amor</button>
             <button class="tab-btn" onclick="abrirGaleria(event, 'cupcakes')">Cupcakes</button>
+            <button class="tab-btn" onclick="abrirGaleria(event, 'suspiros')">Suspiros</button>
             <button class="tab-btn" onclick="abrirGaleria(event, 'pirulitos')">Pirulitos</button>
         </div>
 
-        <div id="suspiros" class="tab-content" style="display:block">
+        <div id="bolos" class="tab-content" style="display:block">
             <div class="galeria-grid">
-                <div class="foto-box"><img src="img/suspiro1.jpg"></div>
-                <div class="foto-box"><img src="img/suspiro1.jpg"></div>
-                <div class="foto-box"><img src="img/suspiro1.jpg"></div>
-                <div class="foto-box"><img src="img/suspiro1.jpg"></div>
+                <div class="foto-box"><img src="bolo1.png"></div>
+                <div class="foto-box"><img src="bolo2.png"></div>
+                <div class="foto-box"><img src="bolo3.png"></div>
+                <div class="foto-box"><img src="bolo4.png"></div>
             </div>
-        </div>
-
-        <div id="bolos" class="tab-content">
-            <div class="galeria-grid">
-                <div class="foto-box"><img src="img/bolo1.jpg"></div>
-                <div class="foto-box"><img src="img/bolo2.jpg"></div>
-                <div class="foto-box"><img src="img/bolo3.jpg"></div>
-                <div class="foto-box"><img src="img/bolo4.jpg"></div>
-            </div>
-        </div>
-
-        <div id="brigadeiros" class="tab-content">
-            <div class="galeria-grid">
-                <div class="foto-box"><img src="img/doc1.jpg"></div>
-                <div class="foto-box"><img src="img/doc2.jpg"></div>
-                <div class="foto-box"><img src="img/doc3.jpg"></div>
-                <div class="foto-box"><img src="img/doc4.jpg"></div>
-            </div>
-        </div>
-
-        <div id="macas" class="tab-content">
-            <div class="galeria-grid">
-                <div class="foto-box"><img src="img/maca1.jpg"></div>
-                <div class="foto-box"><img src="img/maca2.jpg"></div>
-                <div class="foto-box"><img src="img/maca3.jpg"></div>
-                <div class="foto-box"><img src="img/maca4.jpg"></div>
-            </div>
-        </div>
-
-        <div id="cupcakes" class="tab-content">
-            <div class="galeria-grid">
-                <div class="foto-box"><img src="img/cup1.jpg"></div>
-                <div class="foto-box"><img src="img/cup2.jpg"></div>
-                <div class="foto-box"><img src="img/cup3.jpg"></div>
-                <div class="foto-box"><img src="img/cup4.jpg"></div>
-            </div>
-        </div>
-
-        <div id="pirulitos" class="tab-content">
-            <div class="galeria-grid">
-                <div class="foto-box"><img src="img/suspiro1.jpg"></div>
-                <div class="foto-box"><img src="img/suspiro1.jpg"></div>
-                <div class="foto-box"><img src="img/suspiro1.jpg"></div>
-                <div class="foto-box"><img src="img/suspiro1.jpg"></div>
-            </div>
-        </div>
-        
-        <div class="instagram-redirect">
-            <a href="https://www.instagram.com/docesceci/" target="_blank" class="btn btn-instagram">
-                📸 VEJA MAIS AQUI (Instagram @docesceci)
-            </a>
-        </div>
-    </section>
-
-    <section id="contato" class="contato-section">
-        <h3>Faça seu Pedido</h3>
-        <p>Curitiba e Região Metropolitana.</p>
-        <a href="https://wa.me/message/T2UWCDCJFEEZA" target="_blank" class="btn btn-whatsapp">Chamar no WhatsApp da Ceci</a>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Ceci Doces Gourmet | Curitiba - PR</p>
-    </footer>
-
-    <script>
-        // LÓGICA DAS ABAS DA GALERIA
-        function abrirGaleria(evt, categoriaNome) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) tabcontent[i].style.display = "none";
-            tablinks = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < tablinks.length; i++) tablinks[i].classList.remove("active");
-            document.getElementById(categoriaNome).style.display = "block";
-            evt.currentTarget.classList.add("active");
-        }
-
-        // LÓGICA DO SLIDER DA HISTÓRIA
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('#slider-historia img');
-        function showNextSlide() {
-            if (slides.length > 1) {
-                slides[currentSlide].classList.remove('active');
-                currentSlide = (currentSlide + 1) % slides.length;
-                slides[currentSlide].classList.add('active');
-            }
-        }
-        setInterval(showNextSlide, 3000); // Troca a cada 3 segundos
-    </script>
-</body>
-</html>

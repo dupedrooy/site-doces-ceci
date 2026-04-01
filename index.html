@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ceci Doces Gourmet | Confeitaria Artesanal</title>
+    <title>Doces Ceci Gourmet | Confeitaria Artesanal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -26,6 +26,7 @@
             scroll-behavior: smooth;
         }
 
+        /* --- NOVO CABEÇALHO --- */
         header {
             background-color: var(--branco);
             padding: 0.5rem 5%;
@@ -38,11 +39,27 @@
             z-index: 1000;
         }
 
-        .logo-container img {
-            height: 80px; /* Ajuste o tamanho da logo aqui */
+        /* Container que junta a logo e o nome */
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Espaço entre a logo e o nome */
+            text-decoration: none;
+        }
+
+        .logo-group img {
+            height: 70px; /* Tamanho da sua logo circular */
             display: block;
         }
 
+        .logo-group h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--rosa-escuro);
+            font-weight: 600;
+        }
+
+        /* Menu de Navegação */
         nav a {
             text-decoration: none;
             color: var(--texto);
@@ -53,6 +70,7 @@
 
         nav a:hover { color: var(--rosa-escuro); }
 
+        /* --- RESTO DO ESTILO --- */
         .hero {
             height: 50vh;
             background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), 
@@ -70,7 +88,6 @@
         section { padding: 50px 10%; text-align: center; }
         h3 { font-family: 'Dancing Script', cursive; font-size: 2.8rem; margin-bottom: 25px; color: var(--rosa-escuro); }
 
-        /* Seção Sobre */
         .sobre-container {
             display: flex;
             align-items: center;
@@ -96,7 +113,6 @@
 
         .sobre-texto { flex: 2; }
 
-        /* Galeria */
         .galeria-menu {
             display: flex;
             flex-wrap: wrap;
@@ -153,6 +169,8 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         @media (max-width: 768px) {
+            .logo-group h1 { font-size: 1.8rem; }
+            .logo-group img { height: 50px; }
             .sobre-container { flex-direction: column; text-align: center; }
             .hero h2 { font-size: 2.5rem; }
         }
@@ -161,8 +179,10 @@
 <body>
 
     <header>
-        <a href="#" class="logo-container">
-            <img src="https://lh3.googleusercontent.com/d/1x722shSPejrHjDjNacrmSGfyWVLj5PfY" alt="Ceci Doces Gourmet">
+        <a href="#" class="logo-group">
+           <img src="https://lh3.googleusercontent.com/d/14D_klsVlP84ZtqHRMXiG4A47cfCbU1w6" alt="Logo Doces Ceci Gourmet">
+            
+            <h1>Doces Ceci Gourmet</h1>
         </a>
         <nav>
             <a href="#sobre">História</a>
@@ -183,7 +203,7 @@
                 <img src="historia.jpg" alt="Foto da História">
             </div>
             <div class="sobre-texto">
-                <p>[EDITE AQUI: Conte a história da Ceci Doces Gourmet]</p>
+                <p>[EDITE AQUI: Conte a história da Doces Ceci Gourmet]</p>
             </div>
         </div>
     </section>
@@ -263,7 +283,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Ceci Doces Gourmet</p>
+        <p>&copy; 2026 Doces Ceci Gourmet</p>
     </footer>
 
     <script>

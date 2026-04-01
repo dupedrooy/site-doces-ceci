@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doces Ceci | Confeitaria Artesanal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rosa-principal: #ffc1d6;
+            --rosa-escuro: #fb8fb1;
+            --branco: #ffffff;
+            --texto: #555;
+            --fundo: #fff9fb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--texto);
+            background-color: var(--fundo);
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: var(--branco);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--rosa-escuro);
+            text-decoration: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--texto);
+            margin-left: 20px;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--rosa-escuro); }
+
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), 
+                        url('https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1964&auto=format&fit=crop') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h2 { font-family: 'Dancing Script', cursive; font-size: 4rem; color: var(--rosa-escuro); text-shadow: 1px 1px 2px rgba(0,0,0,0.05); }
+
+        section { padding: 80px 10%; text-align: center; }
+        h3 { font-family: 'Dancing Script', cursive; font-size: 2.8rem; margin-bottom: 25px; color: var(--rosa-escuro); }
+
+        .especialidades {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .card {
+            background: var(--branco);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid var(--rosa-principal);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(255, 193, 214, 0.3); }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .foto-box {
+            background: #ffeef4;
+            aspect-ratio: 1/1;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px dashed var(--rosa-escuro);
+            color: var(--rosa-escuro);
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--rosa-escuro);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-top: 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover { background-color: #e87ba0; transform: scale(1.05); }
+
+        footer {
+            background-color: var(--rosa-principal);
+            color: #fff;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .social-links { margin-top: 20px; }
+        .social-links a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; }
+            nav a { margin: 0 10px; font-size: 0.9rem; }
+            .hero h2 { font-size: 2.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Doces Ceci</a>
+        <nav>
+            <a href="#sobre">História</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#galeria">Fotos</a>
+            <a href="#contato">Encomendas</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Doçura em cada detalhe</h2>
+        <p><strong>[EDITE AQUI: Insira um slogan chamativo sobre os suspiros e brigadeiros]</strong></p>
+        <a href="https://www.instagram.com/docesceci/" target="_blank" class="btn">Visite nosso Instagram</a>
+    </section>
+
+    <section id="sobre">
+        <h3>Nossa Doce História</h3>
+        <p style="max-width: 850px; margin: 0 auto; font-size: 1.1rem;">
+            [EDITE AQUI: Conte como a Doces Ceci começou. Fale sobre a paixão pela confeitaria artesanal, o cuidado caseiro e como cada receita foi aperfeiçoada para encantar os clientes.]
+        </p>
+    </section>
+
+    <section id="produtos" style="background-color: var(--branco);">
+        <h3>Especialidades da Casa</h3>
+        <div class="especialidades">
+            <div class="card">
+                <h4>Suspiros Artesanais</h4>
+                <p>[EDITE AQUI: Fale sobre a leveza e os formatos dos seus suspiros artesanais.]</p>
+            </div>
+            <div class="card">
+                <h4>Brigadeiros Gourmet</h4>
+                <p>[EDITE AQUI: Destaque a cremosidade e os sabores diferenciados dos seus brigadeiros.]</p>
+            </div>
+            <div class="card">
+                <h4>Bolos Decorados</h4>
+                <p>[EDITE AQUI: Descreva seus bolos para festas e ocasiões especiais.]</p>
+            </div>
+        </div>
+        <a href="#" class="btn">Baixar Cardápio (PDF)</a>
+    </section>
+
+    <section id="galeria">
+        <h3>Um pouquinho do que fazemos</h3>
+        <div class="galeria-grid">
+            <div class="foto-box"><span>[INSIRA FOTO 1 AQUI]</span></div>
+            <div class="foto-box"><span>[INSIRA FOTO 2 AQUI]</span></div>
+            <div class="foto-box"><span>[INSIRA FOTO 3 AQUI]</span></div>
+            <div class="foto-box"><span>[INSIRA FOTO 4 AQUI]</span></div>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: #888;">Dica: Salve as fotos do seu Instagram e substitua esses quadros pelas imagens reais!</p>
+    </section>
+
+    <section id="contato">
+        <h3>Encomendas & Pedidos</h3>
+        <p>Transformamos seu evento em um momento mais doce!</p>
+        <div style="margin: 30px 0;">
+            <p>📍 Curitiba e Região</p>
+            <p>📸 @docesceci</p>
+        </div>
+        <a href="https://wa.me/55NUMERODOWHATSAPP" class="btn" style="background-color: #25d366;">Chamar no WhatsApp</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Doces Ceci - Confeitaria Artesanal</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/docesceci/">Instagram</a>
+            <a href="#">WhatsApp</a>
+        </div>
+    </footer>
+
+</body>
+</html>

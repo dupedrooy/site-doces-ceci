@@ -27,7 +27,7 @@
             scroll-behavior: smooth;
         }
 
-        /* 1. TOPO */
+        /* 1. LOGO E NOME */
         header {
             background-color: var(--branco);
             padding: 0.5rem 5%;
@@ -64,7 +64,7 @@
 
         nav a:hover { color: var(--rosa-escuro); }
 
-        /* 2. BANNER */
+        /* 2. BANNER COM DEGRADÊ BRANCO */
         .hero {
             height: 55vh;
             display: flex;
@@ -76,6 +76,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            /* Efeito de degradê branco por cima da imagem banner.png */
             background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('banner.png');
         }
 
@@ -89,7 +90,7 @@
         section { padding: 60px 10%; text-align: center; }
         h3 { font-family: 'Dancing Script', cursive; font-size: 3rem; margin-bottom: 25px; color: var(--rosa-escuro); }
 
-        /* 3. HISTÓRIA (SLIDER) */
+        /* 3. MINHA HISTÓRIA COM SLIDER */
         .sobre-container {
             display: flex;
             align-items: center;
@@ -124,7 +125,7 @@
 
         .sobre-texto { flex: 2; }
 
-        /* 4. CARDÁPIOS */
+        /* 4. OS 2 CARDÁPIOS LADO A LADO */
         .cardapio-section {
             background-color: var(--branco);
             padding: 50px 10%;
@@ -156,7 +157,7 @@
         .btn-pascoa { background-color: var(--roxo-pascoa); }
         .btn:hover { transform: scale(1.05); filter: brightness(1.1); }
 
-        /* 5. GALERIA */
+        /* 5. GALERIA SEPARADA POR TÓPICOS */
         .galeria-menu {
             display: flex;
             flex-wrap: wrap;
@@ -198,6 +199,7 @@
         .foto-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
         .foto-box:hover img { transform: scale(1.1); }
 
+        /* BOTÃO VEJA MAIS INSTAGRAM */
         .instagram-redirect { margin-top: 50px; text-align: center; }
         .btn-instagram {
             background-color: transparent;
@@ -205,7 +207,7 @@
             border: 2px solid var(--rosa-escuro);
         }
 
-        /* 6. FINAL: WHATSAPP */
+        /* 6. FAÇA SEU PEDIDO + WHATSAPP */
         .contato-section {
             background-color: var(--branco);
             padding: 60px 10%;
@@ -264,8 +266,8 @@
         <h3>Nossos Cardápios</h3>
         <p>Clique abaixo para visualizar nossas opções:</p>
         <div class="btn-group">
-            <a href="link-do-seu-cardapio-fixo.pdf" target="_blank" class="btn">📖 Cardápio Doces e Bolos</a>
-            <a href="link-do-seu-cardapio-pascoa.pdf" target="_blank" class="btn btn-pascoa">🐰 Páscoa 2026</a>
+            <a href="seu-cardapio-doces.pdf" target="_blank" class="btn">📖 Cardápio Doces e Bolos</a>
+            <a href="seu-cardapio-pascoa.pdf" target="_blank" class="btn btn-pascoa">🐰 Páscoa 2026</a>
         </div>
     </div>
 
@@ -287,3 +289,93 @@
                 <div class="foto-box"><img src="bolo3.png"></div>
                 <div class="foto-box"><img src="bolo4.png"></div>
             </div>
+        </div>
+
+        <div id="brigadeiros" class="tab-content">
+            <div class="galeria-grid">
+                <div class="foto-box"><img src="doc1.png"></div>
+                <div class="foto-box"><img src="doc2.png"></div>
+                <div class="foto-box"><img src="doc3.png"></div>
+                <div class="foto-box"><img src="doc4.png"></div>
+            </div>
+        </div>
+
+        <div id="macas" class="tab-content">
+            <div class="galeria-grid">
+                <div class="foto-box"><img src="maca1.png"></div>
+                <div class="foto-box"><img src="maca2.png"></div>
+                <div class="foto-box"><img src="maca3.png"></div>
+                <div class="foto-box"><img src="maca4.png"></div>
+            </div>
+        </div>
+
+        <div id="cupcakes" class="tab-content">
+            <div class="galeria-grid">
+                <div class="foto-box"><img src="cup1.png"></div>
+                <div class="foto-box"><img src="cup2.png"></div>
+                <div class="foto-box"><img src="cup3.png"></div>
+                <div class="foto-box"><img src="cup4.png"></div>
+            </div>
+        </div>
+
+        <div id="suspiros" class="tab-content">
+            <div class="galeria-grid">
+                <div class="foto-box"><img src="susp1.png"></div>
+                <div class="foto-box"><img src="susp2.png"></div>
+                <div class="foto-box"><img src="susp3.png"></div>
+                <div class="foto-box"><img src="susp4.png"></div>
+            </div>
+        </div>
+
+        <div id="pirulitos" class="tab-content">
+            <div class="galeria-grid">
+                <div class="foto-box"><img src="piru1.png"></div>
+                <div class="foto-box"><img src="piru2.png"></div>
+                <div class="foto-box"><img src="piru3.png"></div>
+                <div class="foto-box"><img src="piru4.png"></div>
+            </div>
+        </div>
+
+        <div class="instagram-redirect">
+            <a href="https://www.instagram.com/docesceci/" target="_blank" class="btn btn-instagram">
+                📸 VEJA MAIS AQUI (Instagram @docesceci)
+            </a>
+        </div>
+    </section>
+
+    <section id="contato" class="contato-section">
+        <h3>Faça seu Pedido</h3>
+        <p>Curitiba e Região Metropolitana.</p>
+        <a href="https://wa.me/message/T2UWCDCJFEEZA1" target="_blank" class="btn btn-whatsapp">Chamar no WhatsApp da Ceci</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Ceci Doces Gourmet | Curitiba - PR</p>
+    </footer>
+
+    <script>
+        // Função das abas da Galeria
+        function abrirGaleria(evt, categoriaNome) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) tabcontent[i].style.display = "none";
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) tablinks[i].classList.remove("active");
+            document.getElementById(categoriaNome).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Função do Slider da História
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('#slider-historia img');
+        function showNextSlide() {
+            if (slides.length > 1) {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+        }
+        setInterval(showNextSlide, 3000);
+    </script>
+</body>
+</html>

@@ -64,7 +64,7 @@
 
         nav a:hover { color: var(--rosa-escuro); }
 
-        /* 2. BANNER COM DEGRADÊ BRANCO */
+        /* 2. BANNER COM DEGRADÊ (banner.jpg) */
         .hero {
             height: 55vh;
             display: flex;
@@ -76,8 +76,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            /* Efeito de degradê branco por cima da imagem banner.png */
-            background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('banner.png');
+            background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('banner.jpg');
         }
 
         .hero h2 { 
@@ -90,7 +89,7 @@
         section { padding: 60px 10%; text-align: center; }
         h3 { font-family: 'Dancing Script', cursive; font-size: 3rem; margin-bottom: 25px; color: var(--rosa-escuro); }
 
-        /* 3. MINHA HISTÓRIA COM SLIDER */
+        /* 3. MINHA HISTÓRIA COM SLIDER (hist1.jpg...) */
         .sobre-container {
             display: flex;
             align-items: center;
@@ -125,7 +124,7 @@
 
         .sobre-texto { flex: 2; }
 
-        /* 4. OS 2 CARDÁPIOS LADO A LADO */
+        /* 4. CARDÁPIOS */
         .cardapio-section {
             background-color: var(--branco);
             padding: 50px 10%;
@@ -157,7 +156,7 @@
         .btn-pascoa { background-color: var(--roxo-pascoa); }
         .btn:hover { transform: scale(1.05); filter: brightness(1.1); }
 
-        /* 5. GALERIA SEPARADA POR TÓPICOS */
+        /* 5. GALERIA */
         .galeria-menu {
             display: flex;
             flex-wrap: wrap;
@@ -199,7 +198,6 @@
         .foto-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
         .foto-box:hover img { transform: scale(1.1); }
 
-        /* BOTÃO VEJA MAIS INSTAGRAM */
         .instagram-redirect { margin-top: 50px; text-align: center; }
         .btn-instagram {
             background-color: transparent;
@@ -207,7 +205,7 @@
             border: 2px solid var(--rosa-escuro);
         }
 
-        /* 6. FAÇA SEU PEDIDO + WHATSAPP */
+        /* 6. WHATSAPP */
         .contato-section {
             background-color: var(--branco);
             padding: 60px 10%;
@@ -252,9 +250,9 @@
         <h3>Nossa Doce História</h3>
         <div class="sobre-container">
             <div class="sobre-imagem" id="slider-historia">
-                <img src="hist1.png" class="active" alt="História 1">
-                <img src="hist2.png" alt="História 2">
-                <img src="hist3.png" alt="História 3">
+                <img src="hist1.jpg" class="active" alt="História 1">
+                <img src="hist2.jpg" alt="História 2">
+                <img src="hist3.jpg" alt="História 3">
             </div>
             <div class="sobre-texto">
                 <p>Nossa paixão por criar doces inesquecíveis começou em Curitiba, unindo técnica artesanal e os melhores ingredientes para adoçar os momentos mais especiais da sua vida.</p>
@@ -284,55 +282,55 @@
 
         <div id="bolos" class="tab-content" style="display:block">
             <div class="galeria-grid">
-                <div class="foto-box"><img src="bolo1.png"></div>
-                <div class="foto-box"><img src="bolo2.png"></div>
-                <div class="foto-box"><img src="bolo3.png"></div>
-                <div class="foto-box"><img src="bolo4.png"></div>
+                <div class="foto-box"><img src="bolo1.jpg"></div>
+                <div class="foto-box"><img src="bolo2.jpg"></div>
+                <div class="foto-box"><img src="bolo3.jpg"></div>
+                <div class="foto-box"><img src="bolo4.jpg"></div>
             </div>
         </div>
 
         <div id="brigadeiros" class="tab-content">
             <div class="galeria-grid">
-                <div class="foto-box"><img src="doc1.png"></div>
-                <div class="foto-box"><img src="doc2.png"></div>
-                <div class="foto-box"><img src="doc3.png"></div>
-                <div class="foto-box"><img src="doc4.png"></div>
+                <div class="foto-box"><img src="doc1.jpg"></div>
+                <div class="foto-box"><img src="doc2.jpg"></div>
+                <div class="foto-box"><img src="doc3.jpg"></div>
+                <div class="foto-box"><img src="doc4.jpg"></div>
             </div>
         </div>
 
         <div id="macas" class="tab-content">
             <div class="galeria-grid">
-                <div class="foto-box"><img src="maca1.png"></div>
-                <div class="foto-box"><img src="maca2.png"></div>
-                <div class="foto-box"><img src="maca3.png"></div>
-                <div class="foto-box"><img src="maca4.png"></div>
+                <div class="foto-box"><img src="maca1.jpg"></div>
+                <div class="foto-box"><img src="maca2.jpg"></div>
+                <div class="foto-box"><img src="maca3.jpg"></div>
+                <div class="foto-box"><img src="maca4.jpg"></div>
             </div>
         </div>
 
         <div id="cupcakes" class="tab-content">
             <div class="galeria-grid">
-                <div class="foto-box"><img src="cup1.png"></div>
-                <div class="foto-box"><img src="cup2.png"></div>
-                <div class="foto-box"><img src="cup3.png"></div>
-                <div class="foto-box"><img src="cup4.png"></div>
+                <div class="foto-box"><img src="cup1.jpg"></div>
+                <div class="foto-box"><img src="cup2.jpg"></div>
+                <div class="foto-box"><img src="cup3.jpg"></div>
+                <div class="foto-box"><img src="cup4.jpg"></div>
             </div>
         </div>
 
         <div id="suspiros" class="tab-content">
             <div class="galeria-grid">
-                <div class="foto-box"><img src="susp1.png"></div>
-                <div class="foto-box"><img src="susp2.png"></div>
-                <div class="foto-box"><img src="susp3.png"></div>
-                <div class="foto-box"><img src="susp4.png"></div>
+                <div class="foto-box"><img src="susp1.jpg"></div>
+                <div class="foto-box"><img src="susp2.jpg"></div>
+                <div class="foto-box"><img src="susp3.jpg"></div>
+                <div class="foto-box"><img src="susp4.jpg"></div>
             </div>
         </div>
 
         <div id="pirulitos" class="tab-content">
             <div class="galeria-grid">
-                <div class="foto-box"><img src="piru1.png"></div>
-                <div class="foto-box"><img src="piru2.png"></div>
-                <div class="foto-box"><img src="piru3.png"></div>
-                <div class="foto-box"><img src="piru4.png"></div>
+                <div class="foto-box"><img src="piru1.jpg"></div>
+                <div class="foto-box"><img src="piru2.jpg"></div>
+                <div class="foto-box"><img src="piru3.jpg"></div>
+                <div class="foto-box"><img src="piru4.jpg"></div>
             </div>
         </div>
 
@@ -354,7 +352,6 @@
     </footer>
 
     <script>
-        // Função das abas da Galeria
         function abrirGaleria(evt, categoriaNome) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tab-content");
@@ -365,7 +362,6 @@
             evt.currentTarget.classList.add("active");
         }
 
-        // Função do Slider da História
         let currentSlide = 0;
         const slides = document.querySelectorAll('#slider-historia img');
         function showNextSlide() {

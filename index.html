@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ceci Doces Gourmet | Confeitaria Artesanal</title>
+    <title>Ceci Doces Gourmet | Confeitaria Artesanal Curitiba</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Header */
+        /* 1. TOPO: LOGO E NOME */
         header {
             background-color: var(--branco);
             padding: 0.5rem 5%;
@@ -67,9 +67,11 @@
 
         nav a:hover { color: var(--rosa-escuro); }
 
-        /* Banner (HERO) */
+        /* 2. BANNER EDITÁVEL COM DEGRADÊ BRANCO */
         .hero {
             height: 55vh;
+            /* O degradê branco (overlay) está aqui: rgba(255, 255, 255, 0.5) */
+            /* Altere 'fundo-banner.jpg' pelo nome da sua imagem de fundo */
             background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
                         url('fundo-banner.jpg') center/cover no-repeat;
             display: flex;
@@ -80,12 +82,17 @@
             padding: 20px;
         }
 
-        .hero h2 { font-family: 'Dancing Script', cursive; font-size: 4rem; color: var(--rosa-escuro); }
+        .hero h2 { 
+            font-family: 'Dancing Script', cursive; 
+            font-size: 4rem; 
+            color: var(--rosa-escuro); 
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }
 
         section { padding: 60px 10%; text-align: center; }
         h3 { font-family: 'Dancing Script', cursive; font-size: 3rem; margin-bottom: 25px; color: var(--rosa-escuro); }
 
-        /* Seção Sobre */
+        /* 3. MINHA HISTÓRIA COM IMAGEM */
         .sobre-container {
             display: flex;
             align-items: center;
@@ -107,7 +114,7 @@
         .sobre-imagem img { width: 100%; height: 100%; object-fit: cover; }
         .sobre-texto { flex: 2; }
 
-        /* --- SEÇÃO DOS CARDÁPIOS --- */
+        /* 4. DOIS CARDÁPIOS LADO A LADO */
         .cardapio-section {
             background-color: var(--branco);
             padding: 50px 10%;
@@ -141,7 +148,7 @@
 
         .btn:hover { transform: scale(1.05); filter: brightness(1.1); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
-        /* Galeria e Abas */
+        /* 5. GALERIA SEPARADA POR TÓPICOS (4 FOTOS CADA) */
         .galeria-menu {
             display: flex;
             flex-wrap: wrap;
@@ -183,6 +190,36 @@
         .foto-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
         .foto-box:hover img { transform: scale(1.1); }
 
+        /* BOTÃO VEJA MAIS AQUI (INSTAGRAM) */
+        .instagram-redirect {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .btn-instagram {
+            background-color: transparent;
+            color: var(--rosa-escuro);
+            border: 2px solid var(--rosa-escuro);
+            padding: 12px 30px;
+        }
+
+        .btn-instagram:hover {
+            background-color: var(--rosa-escuro);
+            color: white;
+        }
+
+        /* 6. FINAL: FAÇA SEU PEDIDO COM WHATSAPP */
+        .contato-section {
+            background-color: var(--branco);
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+            margin-top: 20px;
+        }
+
         footer { background-color: var(--rosa-principal); color: white; padding: 40px; text-align: center; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -223,7 +260,7 @@
                 <img src="historia.jpg" alt="Minha História">
             </div>
             <div class="sobre-texto">
-                <p>[EDITE AQUI: Conte a história da Ceci Doces Gourmet!]</p>
+                <p>[EDITE AQUI: Conte a história da Ceci Doces Gourmet! Como começou sua paixão pela confeitaria artesanal.]</p>
             </div>
         </div>
     </section>
@@ -302,12 +339,21 @@
                 <div class="foto-box"><img src="pirulito4.jpg"></div>
             </div>
         </div>
+
+        <div class="instagram-redirect">
+            <a href="https://www.instagram.com/docesceci/" target="_blank" class="btn btn-instagram">
+                📸 VEJA MAIS AQUI (Instagram @docesceci)
+            </a>
+        </div>
     </section>
 
-    <section id="contato" style="background-color: var(--branco);">
+    <section id="contato" class="contato-section">
         <h3>Faça seu Pedido</h3>
-        <p>Curitiba e Região Metropolitana</p>
-        <a href="https://wa.me/5541999999999" target="_blank" class="btn" style="background-color: #25d366;">WhatsApp da Ceci</a>
+        <p>Atendemos Curitiba e Região Metropolitana.</p>
+        <p>Entre em contato e encomende suas doçuras!</p>
+        <a href="https://wa.me/5541999999999" target="_blank" class="btn btn-whatsapp">
+            Chamar no WhatsApp da Ceci
+        </a>
     </section>
 
     <footer>

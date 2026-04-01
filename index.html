@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doces Ceci Gourmet | Confeitaria Artesanal</title>
+    <title>Ceci Doces Gourmet | Confeitaria Artesanal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="<img src="https://lh3.googleusercontent.com/d/1j_8Hfs_XVMbrpiX3vV8kb6DkBstq0bOa">" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --rosa-principal: #ffc1d6;
             --rosa-escuro: #fb8fb1;
+            --roxo-pascoa: #ba68c8;
             --branco: #ffffff;
             --texto: #555;
             --fundo: #fff9fb;
@@ -26,7 +27,7 @@
             scroll-behavior: smooth;
         }
 
-        /* --- NOVO CABEÇALHO --- */
+        /* Header */
         header {
             background-color: var(--branco);
             padding: 0.5rem 5%;
@@ -39,16 +40,15 @@
             z-index: 1000;
         }
 
-        /* Container que junta a logo e o nome */
         .logo-group {
             display: flex;
             align-items: center;
-            gap: 15px; /* Espaço entre a logo e o nome */
+            gap: 15px;
             text-decoration: none;
         }
 
         .logo-group img {
-            height: 70px; /* Tamanho da sua logo circular */
+            height: 75px;
             display: block;
         }
 
@@ -56,25 +56,22 @@
             font-family: 'Dancing Script', cursive;
             font-size: 2.5rem;
             color: var(--rosa-escuro);
-            font-weight: 600;
         }
 
-        /* Menu de Navegação */
         nav a {
             text-decoration: none;
             color: var(--texto);
             margin-left: 20px;
-            font-weight: 400;
             transition: color 0.3s;
         }
 
         nav a:hover { color: var(--rosa-escuro); }
 
-        /* --- RESTO DO ESTILO --- */
+        /* Banner (HERO) - AQUI VOCÊ MUDA A IMAGEM DE FUNDO */
         .hero {
-            height: 50vh;
-            background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), 
-                        url('https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1974&auto=format&fit=crop') center/cover;
+            height: 55vh;
+            background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
+                        url('sua-imagem-banner.jpg') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -83,11 +80,12 @@
             padding: 20px;
         }
 
-        .hero h2 { font-family: 'Dancing Script', cursive; font-size: 3.5rem; color: var(--rosa-escuro); }
+        .hero h2 { font-family: 'Dancing Script', cursive; font-size: 4rem; color: var(--rosa-escuro); }
 
-        section { padding: 50px 10%; text-align: center; }
-        h3 { font-family: 'Dancing Script', cursive; font-size: 2.8rem; margin-bottom: 25px; color: var(--rosa-escuro); }
+        section { padding: 60px 10%; text-align: center; }
+        h3 { font-family: 'Dancing Script', cursive; font-size: 3rem; margin-bottom: 25px; color: var(--rosa-escuro); }
 
+        /* Seção Sobre */
         .sobre-container {
             display: flex;
             align-items: center;
@@ -104,27 +102,24 @@
             border-radius: 20px;
             overflow: hidden;
             border: 2px solid var(--rosa-principal);
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .sobre-imagem img { width: 100%; height: 100%; object-fit: cover; }
-
         .sobre-texto { flex: 2; }
 
+        /* Galeria e Abas */
         .galeria-menu {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
-            margin-bottom: 30px;
+            gap: 12px;
+            margin-bottom: 40px;
         }
 
         .tab-btn {
             background: var(--branco);
             border: 2px solid var(--rosa-principal);
-            padding: 8px 18px;
+            padding: 10px 22px;
             cursor: pointer;
             border-radius: 25px;
             font-family: 'Poppins', sans-serif;
@@ -135,44 +130,50 @@
 
         .tab-btn.active { background-color: var(--rosa-escuro); color: white; border-color: var(--rosa-escuro); }
 
-        .tab-content { display: none; animation: fadeIn 0.5s; }
+        .tab-content { display: none; animation: fadeIn 0.6s ease; }
 
         .galeria-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
         }
 
         .foto-box {
             background: #ffeef4;
             aspect-ratio: 1/1;
-            border-radius: 12px;
+            border-radius: 15px;
             overflow: hidden;
             border: 1px solid var(--rosa-principal);
         }
 
-        .foto-box img { width: 100%; height: 100%; object-fit: cover; }
+        .foto-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
+        .foto-box:hover img { transform: scale(1.1); }
 
+        /* Botões de Cardápio */
         .btn {
             display: inline-block;
             background-color: var(--rosa-escuro);
             color: white;
-            padding: 12px 30px;
+            padding: 15px 35px;
             border-radius: 30px;
             text-decoration: none;
-            margin-top: 20px;
             font-weight: bold;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
         }
 
-        footer { background-color: var(--rosa-principal); color: white; padding: 25px; text-align: center; }
+        .btn:hover { transform: scale(1.05); filter: brightness(1.1); }
 
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        footer { background-color: var(--rosa-principal); color: white; padding: 40px; text-align: center; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         @media (max-width: 768px) {
             .logo-group h1 { font-size: 1.8rem; }
             .logo-group img { height: 50px; }
+            .hero h2 { font-size: 2.8rem; }
             .sobre-container { flex-direction: column; text-align: center; }
-            .hero h2 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -180,8 +181,7 @@
 
     <header>
         <a href="#" class="logo-group">
-           <img src="https://lh3.googleusercontent.com/d/14D_klsVlP84ZtqHRMXiG4A47cfCbU1w6" alt="Logo Doces Ceci Gourmet">
-            
+            <img src="ceci.PNG" alt="Logo Ceci Doces Gourmet">
             <h1>Doces Ceci Gourmet</h1>
         </a>
         <nav>
@@ -200,16 +200,17 @@
         <h3>Nossa Doce História</h3>
         <div class="sobre-container">
             <div class="sobre-imagem">
-                <img src="historia.jpg" alt="Foto da História">
+                <img src="historia.jpg" alt="Minha História">
             </div>
             <div class="sobre-texto">
-                <p>[EDITE AQUI: Conte a história da Doces Ceci Gourmet]</p>
+                <p>[EDITE AQUI: Conte como a Ceci Doces Gourmet nasceu!]</p>
             </div>
         </div>
     </section>
 
     <section id="galeria">
         <h3>Nossas Delícias</h3>
+        
         <div class="galeria-menu">
             <button class="tab-btn active" onclick="abrirGaleria(event, 'suspiros')">Suspiros</button>
             <button class="tab-btn" onclick="abrirGaleria(event, 'bolos')">Bolos Festivos</button>
@@ -273,13 +274,16 @@
             </div>
         </div>
 
-        <a href="https://www.instagram.com/docesceci/" target="_blank" class="btn">Mais no Instagram</a>
+        <div style="margin-top: 50px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+            <a href="LINK_DOCES_BOLOS.pdf" target="_blank" class="btn">📖 Cardápio Doces e Bolos</a>
+            <a href="LINK_PASCOA_2026.pdf" target="_blank" class="btn" style="background-color: var(--roxo-pascoa);">🐰 Páscoa 2026</a>
+        </div>
     </section>
 
-    <section id="contato">
-        <h3>Encomendas</h3>
+    <section id="contato" style="background-color: var(--branco);">
+        <h3>Faça seu Pedido</h3>
         <p>Curitiba e Região Metropolitana</p>
-        <a href="https://wa.me/5541999999999" class="btn" style="background-color: #25d366;">WhatsApp</a>
+        <a href="https://wa.me/5541999999999" class="btn" style="background-color: #25d366;">WhatsApp da Ceci</a>
     </section>
 
     <footer>

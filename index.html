@@ -54,7 +54,7 @@
 
         .logo-group h1 {
             font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--rosa-escuro);
         }
 
@@ -67,11 +67,11 @@
 
         nav a:hover { color: var(--rosa-escuro); }
 
-        /* Banner (HERO) - AQUI VOCÊ MUDA A IMAGEM DE FUNDO */
+        /* Banner (HERO) */
         .hero {
             height: 55vh;
             background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
-                        url('sua-imagem-banner.jpg') center/cover no-repeat;
+                        url('fundo-banner.jpg') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -106,6 +106,40 @@
 
         .sobre-imagem img { width: 100%; height: 100%; object-fit: cover; }
         .sobre-texto { flex: 2; }
+
+        /* --- SEÇÃO DOS CARDÁPIOS --- */
+        .cardapio-section {
+            background-color: var(--branco);
+            padding: 50px 10%;
+            margin: 20px 0;
+            box-shadow: inset 0 0 20px rgba(255, 193, 214, 0.1);
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--rosa-escuro);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-pascoa { background-color: var(--roxo-pascoa); }
+
+        .btn:hover { transform: scale(1.05); filter: brightness(1.1); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
         /* Galeria e Abas */
         .galeria-menu {
@@ -149,31 +183,16 @@
         .foto-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
         .foto-box:hover img { transform: scale(1.1); }
 
-        /* Botões de Cardápio */
-        .btn {
-            display: inline-block;
-            background-color: var(--rosa-escuro);
-            color: white;
-            padding: 15px 35px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover { transform: scale(1.05); filter: brightness(1.1); }
-
         footer { background-color: var(--rosa-principal); color: white; padding: 40px; text-align: center; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         @media (max-width: 768px) {
-            .logo-group h1 { font-size: 1.8rem; }
-            .logo-group img { height: 50px; }
-            .hero h2 { font-size: 2.8rem; }
+            .logo-group h1 { font-size: 1.6rem; }
+            .logo-group img { height: 55px; }
+            .hero h2 { font-size: 2.5rem; }
             .sobre-container { flex-direction: column; text-align: center; }
+            .btn { width: 100%; }
         }
     </style>
 </head>
@@ -182,12 +201,13 @@
     <header>
         <a href="#" class="logo-group">
             <img src="ceci.PNG" alt="Logo Ceci Doces Gourmet">
-            <h1>Doces Ceci Gourmet</h1>
+            <h1>Ceci Doces Gourmet</h1>
         </a>
         <nav>
             <a href="#sobre">História</a>
+            <a href="#cardapios">Cardápios</a>
             <a href="#galeria">Galeria</a>
-            <a href="#contato">Encomendas</a>
+            <a href="#contato">Contato</a>
         </nav>
     </header>
 
@@ -203,10 +223,19 @@
                 <img src="historia.jpg" alt="Minha História">
             </div>
             <div class="sobre-texto">
-                <p>[EDITE AQUI: Conte como a Ceci Doces Gourmet nasceu!]</p>
+                <p>[EDITE AQUI: Conte a história da Ceci Doces Gourmet!]</p>
             </div>
         </div>
     </section>
+
+    <div id="cardapios" class="cardapio-section">
+        <h3 style="text-align: center;">Nossos Cardápios</h3>
+        <p style="text-align: center;">Clique abaixo para visualizar nossas opções:</p>
+        <div class="btn-group">
+            <a href="link-do-cardapio-doces.pdf" target="_blank" class="btn">📖 Cardápio Doces e Bolos</a>
+            <a href="link-do-cardapio-pascoa.pdf" target="_blank" class="btn btn-pascoa">🐰 Páscoa 2026</a>
+        </div>
+    </div>
 
     <section id="galeria">
         <h3>Nossas Delícias</h3>
@@ -273,21 +302,16 @@
                 <div class="foto-box"><img src="pirulito4.jpg"></div>
             </div>
         </div>
-
-        <div style="margin-top: 50px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-            <a href="LINK_DOCES_BOLOS.pdf" target="_blank" class="btn">📖 Cardápio Doces e Bolos</a>
-            <a href="LINK_PASCOA_2026.pdf" target="_blank" class="btn" style="background-color: var(--roxo-pascoa);">🐰 Páscoa 2026</a>
-        </div>
     </section>
 
     <section id="contato" style="background-color: var(--branco);">
         <h3>Faça seu Pedido</h3>
         <p>Curitiba e Região Metropolitana</p>
-        <a href="https://wa.me/5541999999999" class="btn" style="background-color: #25d366;">WhatsApp da Ceci</a>
+        <a href="https://wa.me/5541999999999" target="_blank" class="btn" style="background-color: #25d366;">WhatsApp da Ceci</a>
     </section>
 
     <footer>
-        <p>&copy; 2026 Doces Ceci Gourmet</p>
+        <p>&copy; 2026 Ceci Doces Gourmet | Curitiba - PR</p>
     </footer>
 
     <script>

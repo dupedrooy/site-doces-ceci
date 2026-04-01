@@ -200,4 +200,161 @@
 
         /* 6. FINAL */
         .contato-section {
-            background-
+            background-color: var(--branco);
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        .btn-whatsapp { background-color: #25d366; margin-top: 20px; }
+
+        footer { background-color: var(--rosa-principal); color: white; padding: 40px; text-align: center; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            .logo-group h1 { font-size: 1.6rem; }
+            .hero h2 { font-size: 2.5rem; }
+            .sobre-container { flex-direction: column; text-align: center; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo-group">
+            <img src="http://googleusercontent.com/profile/picture/ID_DA_LOGO" alt="Logo Ceci Doces Gourmet">
+            <h1>Ceci Doces Gourmet</h1>
+        </a>
+        <nav>
+            <a href="#sobre">História</a>
+            <a href="#cardapios">Cardápios</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero" style="background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('http://googleusercontent.com/profile/picture/11j_8Hfs_XVMbrpiX3vV8kb6DkBstq0bOa');">
+        <h2>Doçura em cada detalhe</h2>
+        <p>Confeitaria Artesanal em Curitiba</p>
+    </section>
+
+    <section id="sobre">
+        <h3>Nossa Doce História</h3>
+        <div class="sobre-container">
+            <div class="sobre-imagem">
+                <img src="http://googleusercontent.com/profile/picture/ID_DA_HISTORIA" alt="Minha História">
+            </div>
+            <div class="sobre-texto">
+                <p>[EDITE AQUI: Conte a história da Ceci Doces Gourmet! Como começou sua paixão pela confeitaria artesanal em Curitiba.]</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="cardapios" class="cardapio-section">
+        <h3 style="text-align: center;">Nossos Cardápios</h3>
+        <p style="text-align: center;">Clique abaixo para visualizar nossas opções:</p>
+        <div class="btn-group">
+            <a href="link-do-cardapio-doces.pdf" target="_blank" class="btn">📖 Cardápio Doces e Bolos</a>
+            <a href="link-do-cardapio-pascoa.pdf" target="_blank" class="btn btn-pascoa">🐰 Páscoa 2026</a>
+        </div>
+    </div>
+
+    <section id="galeria">
+        <h3>Nossas Delícias</h3>
+        
+        <div class="galeria-menu">
+            <button class="tab-btn active" onclick="abrirGaleria(event, 'suspiros')">Suspiros</button>
+            <button class="tab-btn" onclick="abrirGaleria(event, 'bolos')">Bolos Festivos</button>
+            <button class="tab-btn" onclick="abrirGaleria(event, 'brigadeiros')">Brigadeiros</button>
+            <button class="tab-btn" onclick="abrirGaleria(event, 'macas')">Maçãs do Amor</button>
+            <button class="tab-btn" onclick="abrirGaleria(event, 'cupcakes')">Cupcakes</button>
+            <button class="tab-btn" onclick="abrirGaleria(event, 'pirulitos')">Pirulitos</button>
+        </div>
+
+        <div id="suspiros" class="tab-content" style="display:block">
+            <div class="galeria-grid">
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_SUSPIRO_1"></div>
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_SUSPIRO_2"></div>
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_SUSPIRO_3"></div>
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_SUSPIRO_4"></div>
+            </div>
+        </div>
+
+        <div id="bolos" class="tab-content">
+            <div class="galeria-grid">
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_BOLO_1"></div>
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_BOLO_2"></div>
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_BOLO_3"></div>
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_BOLO_4"></div>
+            </div>
+        </div>
+
+        <div id="brigadeiros" class="tab-content">
+            <div class="galeria-grid">
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_BRIGADEIRO_1"></div>
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_BRIGADEIRO_2"></div>
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_BRIGADEIRO_3"></div>
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_BRIGADEIRO_4"></div>
+            </div>
+        </div>
+
+        <div id="macas" class="tab-content">
+            <div class="galeria-grid">
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_MACA_1"></div>
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_MACA_2"></div>
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_MACA_3"></div>
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_MACA_4"></div>
+            </div>
+        </div>
+
+        <div id="cupcakes" class="tab-content">
+            <div class="galeria-grid">
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_CUPCAKE_1"></div>
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_CUPCAKE_2"></div>
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_CUPCAKE_3"></div>
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_CUPCAKE_4"></div>
+            </div>
+        </div>
+
+        <div id="pirulitos" class="tab-content">
+            <div class="galeria-grid">
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_PIRULITO_1"></div>
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_PIRULITO_2"></div>
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_PIRULITO_3"></div>
+                <div class="foto-box"><img src="http://googleusercontent.com/profile/picture/ID_PIRULITO_4"></div>
+            </div>
+        </div>
+
+        <div class="instagram-redirect">
+            <a href="https://www.instagram.com/docesceci/" target="_blank" class="btn btn-instagram">
+                📸 VEJA MAIS AQUI (Instagram @docesceci)
+            </a>
+        </div>
+    </section>
+
+    <section id="contato" class="contato-section">
+        <h3>Faça seu Pedido</h3>
+        <p>Curitiba e Região Metropolitana.</p>
+        <a href="https://wa.me/5541999999999" target="_blank" class="btn btn-whatsapp">
+            Chamar no WhatsApp da Ceci
+        </a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Ceci Doces Gourmet | Curitiba - PR</p>
+    </footer>
+
+    <script>
+        function abrirGaleria(evt, categoriaNome) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) tabcontent[i].style.display = "none";
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) tablinks[i].classList.remove("active");
+            document.getElementById(categoriaNome).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>

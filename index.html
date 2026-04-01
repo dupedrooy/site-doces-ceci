@@ -39,21 +39,17 @@
             z-index: 1000;
         }
 
-        .logo-container { text-decoration: none; display: flex; align-items: center; }
-        
-        /* Se você tiver o arquivo da logo, use a tag img abaixo. 
-           Se não, ele mostrará o texto estilizado. */
         .logo-text {
             font-family: 'Dancing Script', cursive;
             font-size: 2.2rem;
             color: var(--rosa-escuro);
+            text-decoration: none;
         }
 
         nav a {
             text-decoration: none;
             color: var(--texto);
             margin-left: 20px;
-            font-weight: 400;
             transition: color 0.3s;
         }
 
@@ -61,8 +57,8 @@
 
         /* Banner */
         .hero {
-            height: 60vh;
-            background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
+            height: 50vh;
+            background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), 
                         url('https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1974&auto=format&fit=crop') center/cover;
             display: flex;
             flex-direction: column;
@@ -74,27 +70,27 @@
 
         .hero h2 { font-family: 'Dancing Script', cursive; font-size: 4rem; color: var(--rosa-escuro); }
 
-        section { padding: 60px 10%; text-align: center; }
-        h3 { font-family: 'Dancing Script', cursive; font-size: 3rem; margin-bottom: 20px; color: var(--rosa-escuro); }
+        section { padding: 50px 10%; text-align: center; }
+        h3 { font-family: 'Dancing Script', cursive; font-size: 3rem; margin-bottom: 25px; color: var(--rosa-escuro); }
 
-        /* Sistema de Galeria por Categorias */
+        /* Menu de Abas */
         .galeria-menu {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             margin-bottom: 40px;
         }
 
         .tab-btn {
             background: var(--branco);
             border: 2px solid var(--rosa-principal);
-            padding: 12px 25px;
+            padding: 10px 22px;
             cursor: pointer;
-            border-radius: 30px;
+            border-radius: 25px;
             font-family: 'Poppins', sans-serif;
-            color: var(--texto);
             font-weight: 600;
+            color: var(--texto);
             transition: all 0.3s ease;
         }
 
@@ -102,49 +98,58 @@
             background-color: var(--rosa-escuro);
             color: white;
             border-color: var(--rosa-escuro);
-            transform: scale(1.05);
         }
 
+        /* Grid da Galeria */
         .tab-content {
             display: none;
-            animation: fadeIn 0.5s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            animation: fadeIn 0.6s ease;
         }
 
         .galeria-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
         }
 
         .foto-box {
-            background: #fff;
+            background: #ffeef4; /* Fundo rosa caso não tenha foto */
             aspect-ratio: 1/1;
-            border-radius: 20px;
+            border-radius: 15px;
             overflow: hidden;
-            border: 1px solid #eee;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--rosa-principal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Texto que aparece se a imagem falhar ou não existir */
+        .foto-box::after {
+            content: '📸';
+            font-size: 2rem;
+            color: var(--rosa-escuro);
+            opacity: 0.5;
+            position: absolute;
+            z-index: 1;
         }
 
         .foto-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
+            transition: transform 0.4s;
+            position: relative;
+            z-index: 2; /* Fica na frente do ícone */
         }
 
         .foto-box:hover img { transform: scale(1.1); }
 
-        /* Botões e Footer */
         .btn {
             display: inline-block;
             background-color: var(--rosa-escuro);
             color: white;
-            padding: 15px 40px;
+            padding: 14px 35px;
             border-radius: 30px;
             text-decoration: none;
             margin-top: 30px;
@@ -152,44 +157,46 @@
             transition: 0.3s;
         }
 
-        .btn:hover { background-color: #e87ba0; }
-
         footer {
             background-color: var(--rosa-principal);
             color: white;
-            padding: 40px;
+            padding: 30px;
             text-align: center;
+            margin-top: 50px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @media (max-width: 768px) {
-            .hero h2 { font-size: 2.5rem; }
-            nav { display: none; } /* Oculta menu no mobile para simplificar */
+            .hero h2 { font-size: 2.8rem; }
+            section { padding: 40px 5%; }
+            .tab-btn { font-size: 0.8rem; padding: 8px 15px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo-container">
-            <span class="logo-text">Doces Ceci</span>
-        </a>
+        <a href="#" class="logo-text">Doces Ceci</a>
         <nav>
             <a href="#sobre">História</a>
             <a href="#galeria">Galeria</a>
-            <a href="#contato">Contato</a>
+            <a href="#contato">Encomendas</a>
         </nav>
     </header>
 
     <section class="hero">
         <h2>Doçura em cada detalhe</h2>
-        <p>Confeitaria Artesanal em Curitiba</p>
-        <a href="#contato" class="btn">Faça sua Encomenda</a>
+        <p>Confeitaria Caseira Artesanal em Curitiba</p>
     </section>
 
     <section id="sobre">
         <h3>Nossa Doce História</h3>
         <p style="max-width: 800px; margin: 0 auto;">
-            [EDITE AQUI: Conte como a Doces Ceci nasceu do amor pela confeitaria caseira e se tornou referência em sabores artesanais.]
+            [EDITE AQUI: Conte como a Doces Ceci começou com foco em suspiros e brigadeiros e hoje adoça momentos com bolos, maçãs e muito mais!]
         </p>
     </section>
 
@@ -197,9 +204,9 @@
         <h3>Nossas Delícias</h3>
         
         <div class="galeria-menu">
-            <button class="tab-btn active" onclick="abrirGaleria(event, 'suspiros')">Suspiros Artesanais</button>
+            <button class="tab-btn active" onclick="abrirGaleria(event, 'suspiros')">Suspiros</button>
             <button class="tab-btn" onclick="abrirGaleria(event, 'bolos')">Bolos Festivos</button>
-            <button class="tab-btn" onclick="abrirGaleria(event, 'brigadeiros')">Brigadeiros Gourmet</button>
+            <button class="tab-btn" onclick="abrirGaleria(event, 'brigadeiros')">Brigadeiros</button>
             <button class="tab-btn" onclick="abrirGaleria(event, 'macas')">Maçãs do Amor</button>
             <button class="tab-btn" onclick="abrirGaleria(event, 'cupcakes')">Cupcakes</button>
             <button class="tab-btn" onclick="abrirGaleria(event, 'pirulitos')">Pirulitos de Cristal</button>
@@ -210,6 +217,7 @@
                 <div class="foto-box"><img src="suspiro1.jpg" alt="Suspiro 1"></div>
                 <div class="foto-box"><img src="suspiro2.jpg" alt="Suspiro 2"></div>
                 <div class="foto-box"><img src="suspiro3.jpg" alt="Suspiro 3"></div>
+                <div class="foto-box"><img src="suspiro4.jpg" alt="Suspiro 4"></div>
             </div>
         </div>
 
@@ -217,6 +225,8 @@
             <div class="galeria-grid">
                 <div class="foto-box"><img src="bolo1.jpg" alt="Bolo 1"></div>
                 <div class="foto-box"><img src="bolo2.jpg" alt="Bolo 2"></div>
+                <div class="foto-box"><img src="bolo3.jpg" alt="Bolo 3"></div>
+                <div class="foto-box"><img src="bolo4.jpg" alt="Bolo 4"></div>
             </div>
         </div>
 
@@ -224,6 +234,8 @@
             <div class="galeria-grid">
                 <div class="foto-box"><img src="brigadeiro1.jpg" alt="Brigadeiro 1"></div>
                 <div class="foto-box"><img src="brigadeiro2.jpg" alt="Brigadeiro 2"></div>
+                <div class="foto-box"><img src="brigadeiro3.jpg" alt="Brigadeiro 3"></div>
+                <div class="foto-box"><img src="brigadeiro4.jpg" alt="Brigadeiro 4"></div>
             </div>
         </div>
 
@@ -231,33 +243,40 @@
             <div class="galeria-grid">
                 <div class="foto-box"><img src="maca1.jpg" alt="Maçã 1"></div>
                 <div class="foto-box"><img src="maca2.jpg" alt="Maçã 2"></div>
+                <div class="foto-box"><img src="maca3.jpg" alt="Maçã 3"></div>
+                <div class="foto-box"><img src="maca4.jpg" alt="Maçã 4"></div>
             </div>
         </div>
 
         <div id="cupcakes" class="tab-content">
             <div class="galeria-grid">
                 <div class="foto-box"><img src="cupcake1.jpg" alt="Cupcake 1"></div>
+                <div class="foto-box"><img src="cupcake2.jpg" alt="Cupcake 2"></div>
+                <div class="foto-box"><img src="cupcake3.jpg" alt="Cupcake 3"></div>
+                <div class="foto-box"><img src="cupcake4.jpg" alt="Cupcake 4"></div>
             </div>
         </div>
 
         <div id="pirulitos" class="tab-content">
             <div class="galeria-grid">
                 <div class="foto-box"><img src="pirulito1.jpg" alt="Pirulito 1"></div>
+                <div class="foto-box"><img src="pirulito2.jpg" alt="Pirulito 2"></div>
+                <div class="foto-box"><img src="pirulito3.jpg" alt="Pirulito 3"></div>
+                <div class="foto-box"><img src="pirulito4.jpg" alt="Pirulito 4"></div>
             </div>
         </div>
 
-        <a href="https://www.instagram.com/docesceci/" target="_blank" class="btn">Ver mais no Instagram</a>
+        <a href="https://www.instagram.com/docesceci/" target="_blank" class="btn">Seguir no Instagram</a>
     </section>
 
-    <section id="contato">
-        <h3>Encomendas</h3>
-        <p>Curitiba e Região Metropolitana</p>
-        <p>Siga-nos: <b>@docesceci</b></p>
-        <a href="https://wa.me/55NUMEROAQUI" class="btn" style="background-color: #25d366;">Pedir via WhatsApp</a>
+    <section id="contato" style="background-color: var(--branco);">
+        <h3>Faça seu Pedido</h3>
+        <p>Atendimento em Curitiba e região.</p>
+        <a href="https://wa.me/55NUMEROAQUI" class="btn" style="background-color: #25d366;">WhatsApp da Ceci</a>
     </section>
 
     <footer>
-        <p>&copy; 2026 Doces Ceci | Criado com carinho para adoçar sua vida.</p>
+        <p>&copy; 2026 Doces Ceci - Doçura artesanal em cada pedaço.</p>
     </footer>
 
     <script>

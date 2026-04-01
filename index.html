@@ -259,4 +259,23 @@
     <section id="contato">
         <h3>Encomendas</h3>
         <p>Curitiba e Região Metropolitana</p>
-        <a href="https://wa.me/5541999999999"
+        <a href="https://wa.me/5541999999999" class="btn" style="background-color: #25d366;">WhatsApp</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Ceci Doces Gourmet</p>
+    </footer>
+
+    <script>
+        function abrirGaleria(evt, categoriaNome) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) tabcontent[i].style.display = "none";
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) tablinks[i].classList.remove("active");
+            document.getElementById(categoriaNome).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>

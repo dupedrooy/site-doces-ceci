@@ -26,10 +26,9 @@
             scroll-behavior: smooth;
         }
 
-        /* Header e Logo */
         header {
             background-color: var(--branco);
-            padding: 1rem 5%;
+            padding: 0.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -39,24 +38,21 @@
             z-index: 1000;
         }
 
-        .logo-text {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2rem; /* Ajustado para caber o nome maior */
-            color: var(--rosa-escuro);
-            text-decoration: none;
-            white-space: nowrap; /* Impede que o nome quebre em duas linhas */
+        .logo-container img {
+            height: 80px; /* Ajuste o tamanho da logo aqui */
+            display: block;
         }
 
         nav a {
             text-decoration: none;
             color: var(--texto);
             margin-left: 20px;
+            font-weight: 400;
             transition: color 0.3s;
         }
 
         nav a:hover { color: var(--rosa-escuro); }
 
-        /* Banner */
         .hero {
             height: 50vh;
             background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), 
@@ -69,12 +65,12 @@
             padding: 20px;
         }
 
-        .hero h2 { font-family: 'Dancing Script', cursive; font-size: 4rem; color: var(--rosa-escuro); }
+        .hero h2 { font-family: 'Dancing Script', cursive; font-size: 3.5rem; color: var(--rosa-escuro); }
 
         section { padding: 50px 10%; text-align: center; }
-        h3 { font-family: 'Dancing Script', cursive; font-size: 3rem; margin-bottom: 25px; color: var(--rosa-escuro); }
+        h3 { font-family: 'Dancing Script', cursive; font-size: 2.8rem; margin-bottom: 25px; color: var(--rosa-escuro); }
 
-        /* Seção Sobre com Imagem */
+        /* Seção Sobre */
         .sobre-container {
             display: flex;
             align-items: center;
@@ -94,139 +90,80 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
         }
 
-        .sobre-imagem::after {
-            content: '📸';
-            font-size: 3rem;
-            color: var(--rosa-escuro);
-            opacity: 0.5;
-            position: absolute;
-            z-index: 1;
-        }
+        .sobre-imagem img { width: 100%; height: 100%; object-fit: cover; }
 
-        .sobre-imagem img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: relative;
-            z-index: 2;
-        }
+        .sobre-texto { flex: 2; }
 
-        .sobre-texto {
-            flex: 2;
-        }
-
-        /* Menu de Abas */
+        /* Galeria */
         .galeria-menu {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
-            margin-bottom: 40px;
+            gap: 10px;
+            margin-bottom: 30px;
         }
 
         .tab-btn {
             background: var(--branco);
             border: 2px solid var(--rosa-principal);
-            padding: 10px 22px;
+            padding: 8px 18px;
             cursor: pointer;
             border-radius: 25px;
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
             color: var(--texto);
-            transition: all 0.3s ease;
+            transition: 0.3s;
         }
 
-        .tab-btn:hover, .tab-btn.active {
-            background-color: var(--rosa-escuro);
-            color: white;
-            border-color: var(--rosa-escuro);
-        }
+        .tab-btn.active { background-color: var(--rosa-escuro); color: white; border-color: var(--rosa-escuro); }
 
-        /* Grid da Galeria */
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.6s ease;
-        }
+        .tab-content { display: none; animation: fadeIn 0.5s; }
 
         .galeria-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
         }
 
         .foto-box {
             background: #ffeef4;
             aspect-ratio: 1/1;
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
             border: 1px solid var(--rosa-principal);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
         }
 
-        .foto-box::after {
-            content: '📸';
-            font-size: 2rem;
-            color: var(--rosa-escuro);
-            opacity: 0.5;
-            position: absolute;
-            z-index: 1;
-        }
-
-        .foto-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s;
-            position: relative;
-            z-index: 2;
-        }
-
-        .foto-box:hover img { transform: scale(1.1); }
+        .foto-box img { width: 100%; height: 100%; object-fit: cover; }
 
         .btn {
             display: inline-block;
             background-color: var(--rosa-escuro);
             color: white;
-            padding: 14px 35px;
+            padding: 12px 30px;
             border-radius: 30px;
             text-decoration: none;
-            margin-top: 30px;
+            margin-top: 20px;
             font-weight: bold;
-            transition: 0.3s;
         }
 
-        footer {
-            background-color: var(--rosa-principal);
-            color: white;
-            padding: 30px;
-            text-align: center;
-            margin-top: 50px;
-        }
+        footer { background-color: var(--rosa-principal); color: white; padding: 25px; text-align: center; }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         @media (max-width: 768px) {
-            .hero h2 { font-size: 2.8rem; }
-            section { padding: 40px 5%; }
-            .tab-btn { font-size: 0.8rem; padding: 8px 15px; }
             .sobre-container { flex-direction: column; text-align: center; }
-            .sobre-imagem { width: 100%; max-width: 300px; margin-bottom: 20px; }
+            .hero h2 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo-text">Ceci Doces Gourmet</a>
+        <a href="#" class="logo-container">
+            <img src="https://drive.google.com/uc?export=view&id=COLOQUE_AQUI_O_ID_DA_SUA_LOGO" alt="Ceci Doces Gourmet">
+        </a>
         <nav>
             <a href="#sobre">História</a>
             <a href="#galeria">Galeria</a>
@@ -236,117 +173,90 @@
 
     <section class="hero">
         <h2>Doçura em cada detalhe</h2>
-        <p>Confeitaria Caseira Artesanal em Curitiba</p>
+        <p>Confeitaria Artesanal em Curitiba</p>
     </section>
 
     <section id="sobre">
         <h3>Nossa Doce História</h3>
         <div class="sobre-container">
             <div class="sobre-imagem">
-                <img src="historia.jpg" alt="Foto da nossa história">
+                <img src="historia.jpg" alt="Foto da História">
             </div>
             <div class="sobre-texto">
-                <p>
-                    [EDITE AQUI: Conte como a Ceci Doces Gourmet começou com foco em suspiros e brigadeiros e hoje adoça momentos com bolos, maçãs e muito mais! Conte a sua paixão e o cuidado com cada ingrediente.]
-                </p>
+                <p>[EDITE AQUI: Conte a história da Ceci Doces Gourmet]</p>
             </div>
         </div>
     </section>
 
     <section id="galeria">
         <h3>Nossas Delícias</h3>
-        
         <div class="galeria-menu">
             <button class="tab-btn active" onclick="abrirGaleria(event, 'suspiros')">Suspiros</button>
             <button class="tab-btn" onclick="abrirGaleria(event, 'bolos')">Bolos Festivos</button>
             <button class="tab-btn" onclick="abrirGaleria(event, 'brigadeiros')">Brigadeiros</button>
             <button class="tab-btn" onclick="abrirGaleria(event, 'macas')">Maçãs do Amor</button>
             <button class="tab-btn" onclick="abrirGaleria(event, 'cupcakes')">Cupcakes</button>
-            <button class="tab-btn" onclick="abrirGaleria(event, 'pirulitos')">Pirulitos de Cristal</button>
+            <button class="tab-btn" onclick="abrirGaleria(event, 'pirulitos')">Pirulitos</button>
         </div>
 
         <div id="suspiros" class="tab-content" style="display:block">
             <div class="galeria-grid">
-                <div class="foto-box"><img src="suspiro1.jpg" alt="Suspiro 1"></div>
-                <div class="foto-box"><img src="suspiro2.jpg" alt="Suspiro 2"></div>
-                <div class="foto-box"><img src="suspiro3.jpg" alt="Suspiro 3"></div>
-                <div class="foto-box"><img src="suspiro4.jpg" alt="Suspiro 4"></div>
+                <div class="foto-box"><img src="suspiro1.jpg"></div>
+                <div class="foto-box"><img src="suspiro2.jpg"></div>
+                <div class="foto-box"><img src="suspiro3.jpg"></div>
+                <div class="foto-box"><img src="suspiro4.jpg"></div>
             </div>
         </div>
 
         <div id="bolos" class="tab-content">
             <div class="galeria-grid">
-                <div class="foto-box"><img src="bolo1.jpg" alt="Bolo 1"></div>
-                <div class="foto-box"><img src="bolo2.jpg" alt="Bolo 2"></div>
-                <div class="foto-box"><img src="bolo3.jpg" alt="Bolo 3"></div>
-                <div class="foto-box"><img src="bolo4.jpg" alt="Bolo 4"></div>
+                <div class="foto-box"><img src="bolo1.jpg"></div>
+                <div class="foto-box"><img src="bolo2.jpg"></div>
+                <div class="foto-box"><img src="bolo3.jpg"></div>
+                <div class="foto-box"><img src="bolo4.jpg"></div>
             </div>
         </div>
 
         <div id="brigadeiros" class="tab-content">
             <div class="galeria-grid">
-                <div class="foto-box"><img src="brigadeiro1.jpg" alt="Brigadeiro 1"></div>
-                <div class="foto-box"><img src="brigadeiro2.jpg" alt="Brigadeiro 2"></div>
-                <div class="foto-box"><img src="brigadeiro3.jpg" alt="Brigadeiro 3"></div>
-                <div class="foto-box"><img src="brigadeiro4.jpg" alt="Brigadeiro 4"></div>
+                <div class="foto-box"><img src="brigadeiro1.jpg"></div>
+                <div class="foto-box"><img src="brigadeiro2.jpg"></div>
+                <div class="foto-box"><img src="brigadeiro3.jpg"></div>
+                <div class="foto-box"><img src="brigadeiro4.jpg"></div>
             </div>
         </div>
 
         <div id="macas" class="tab-content">
             <div class="galeria-grid">
-                <div class="foto-box"><img src="maca1.jpg" alt="Maçã 1"></div>
-                <div class="foto-box"><img src="maca2.jpg" alt="Maçã 2"></div>
-                <div class="foto-box"><img src="maca3.jpg" alt="Maçã 3"></div>
-                <div class="foto-box"><img src="maca4.jpg" alt="Maçã 4"></div>
+                <div class="foto-box"><img src="maca1.jpg"></div>
+                <div class="foto-box"><img src="maca2.jpg"></div>
+                <div class="foto-box"><img src="maca3.jpg"></div>
+                <div class="foto-box"><img src="maca4.jpg"></div>
             </div>
         </div>
 
         <div id="cupcakes" class="tab-content">
             <div class="galeria-grid">
-                <div class="foto-box"><img src="cupcake1.jpg" alt="Cupcake 1"></div>
-                <div class="foto-box"><img src="cupcake2.jpg" alt="Cupcake 2"></div>
-                <div class="foto-box"><img src="cupcake3.jpg" alt="Cupcake 3"></div>
-                <div class="foto-box"><img src="cupcake4.jpg" alt="Cupcake 4"></div>
+                <div class="foto-box"><img src="cupcake1.jpg"></div>
+                <div class="foto-box"><img src="cupcake2.jpg"></div>
+                <div class="foto-box"><img src="cupcake3.jpg"></div>
+                <div class="foto-box"><img src="cupcake4.jpg"></div>
             </div>
         </div>
 
         <div id="pirulitos" class="tab-content">
             <div class="galeria-grid">
-                <div class="foto-box"><img src="pirulito1.jpg" alt="Pirulito 1"></div>
-                <div class="foto-box"><img src="pirulito2.jpg" alt="Pirulito 2"></div>
-                <div class="foto-box"><img src="pirulito3.jpg" alt="Pirulito 3"></div>
-                <div class="foto-box"><img src="pirulito4.jpg" alt="Pirulito 4"></div>
+                <div class="foto-box"><img src="pirulito1.jpg"></div>
+                <div class="foto-box"><img src="pirulito2.jpg"></div>
+                <div class="foto-box"><img src="pirulito3.jpg"></div>
+                <div class="foto-box"><img src="pirulito4.jpg"></div>
             </div>
         </div>
 
-        <a href="https://www.instagram.com/docesceci/" target="_blank" class="btn">Seguir no Instagram</a>
+        <a href="https://www.instagram.com/docesceci/" target="_blank" class="btn">Mais no Instagram</a>
     </section>
 
-    <section id="contato" style="background-color: var(--branco);">
-        <h3>Faça seu Pedido</h3>
-        <p>Atendimento em Curitiba e região.</p>
-        <a href="https://wa.me/55NUMEROAQUI" class="btn" style="background-color: #25d366;">WhatsApp da Ceci</a>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Ceci Doces Gourmet - Doçura artesanal em cada pedaço.</p>
-    </footer>
-
-    <script>
-        function abrirGaleria(evt, categoriaNome) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].classList.remove("active");
-            }
-            document.getElementById(categoriaNome).style.display = "block";
-            evt.currentTarget.classList.add("active");
-        }
-    </script>
-
-</body>
-</html>
+    <section id="contato">
+        <h3>Encomendas</h3>
+        <p>Curitiba e Região Metropolitana</p>
+        <a href="https://wa.me/5541999999999"

@@ -64,7 +64,7 @@
 
         nav a:hover { color: var(--rosa-escuro); }
 
-        /* 2. BANNER COM DEGRADÊ (banner.jpg) */
+        /* 2. BANNER COM DEGRADÊ */
         .hero {
             height: 55vh;
             display: flex;
@@ -89,7 +89,7 @@
         section { padding: 60px 10%; text-align: center; }
         h3 { font-family: 'Dancing Script', cursive; font-size: 3rem; margin-bottom: 25px; color: var(--rosa-escuro); text-align: center; }
 
-        /* 3. MINHA HISTÓRIA COM SLIDER (hist1.jpg...) */
+        /* 3. MINHA HISTÓRIA COM SLIDER */
         .sobre-container {
             display: flex;
             align-items: center;
@@ -130,7 +130,7 @@
             padding: 50px 10%;
             margin: 20px 0;
             box-shadow: inset 0 0 20px rgba(255, 193, 214, 0.1);
-            text-align: center; /* Centraliza o título e o parágrafo */
+            text-align: center;
         }
 
         .btn-group {
@@ -265,8 +265,8 @@
         <h3>Nossos Cardápios</h3>
         <p>Clique abaixo para visualizar nossas opções:</p>
         <div class="btn-group">
-            <a href="seu-cardapio-doces.pdf" target="_blank" class="btn">📖 Cardápio COMPLETO</a>
-            <a href="seu-cardapio-pascoa.pdf" target="_blank" class="btn btn-pascoa">🐰 Páscoa 2026</a>
+            <a href="cardapio-doces.pdf" target="_blank" class="btn">📖 Cardápio Doces e Bolos</a>
+            <a href="cardapio-pascoa.pdf" target="_blank" class="btn btn-pascoa">🐰 Páscoa 2026</a>
         </div>
     </div>
 
@@ -275,6 +275,7 @@
         <div class="galeria-menu">
             <button class="tab-btn active" onclick="abrirGaleria(event, 'bolos')">Bolos Festivos</button>
             <button class="tab-btn" onclick="abrirGaleria(event, 'brigadeiros')">Brigadeiros</button>
+            <button class="tab-btn" onclick="abrirGaleria(event, 'sobremesas')">Sobremesas</button>
             <button class="tab-btn" onclick="abrirGaleria(event, 'macas')">Maçãs do Amor</button>
             <button class="tab-btn" onclick="abrirGaleria(event, 'cupcakes')">Cupcakes</button>
             <button class="tab-btn" onclick="abrirGaleria(event, 'suspiros')">Suspiros</button>
@@ -296,6 +297,15 @@
                 <div class="foto-box"><img src="doc2.jpg"></div>
                 <div class="foto-box"><img src="doc3.jpg"></div>
                 <div class="foto-box"><img src="doc4.jpg"></div>
+            </div>
+        </div>
+
+        <div id="sobremesas" class="tab-content">
+            <div class="galeria-grid">
+                <div class="foto-box"><img src="sob1.jpg"></div>
+                <div class="foto-box"><img src="sob2.jpg"></div>
+                <div class="foto-box"><img src="sob3.jpg"></div>
+                <div class="foto-box"><img src="sob4.jpg"></div>
             </div>
         </div>
 
@@ -345,7 +355,7 @@
     <section id="contato" class="contato-section">
         <h3>Faça seu Pedido</h3>
         <p>Curitiba e Região Metropolitana.</p>
-        <a href="https://wa.me/message/T2UWCDCJFEEZA1" target="_blank" class="btn btn-whatsapp">Chamar no WhatsApp da Ceci</a>
+        <a href="https://wa.me/5541999999999" target="_blank" class="btn btn-whatsapp">Chamar no WhatsApp da Ceci</a>
     </section>
 
     <footer>

@@ -157,6 +157,25 @@
         .btn-pascoa { background-color: var(--roxo-pascoa); }
         .btn:hover { transform: scale(1.05); filter: brightness(1.1); }
 
+        
+        .badge {
+    position: absolute;
+    top: 10px;
+    left: -40px;
+    background: #fb8fb1;
+    color: white;
+    padding: 5px 50px;
+    font-size: 0.7rem;
+    transform: rotate(-35deg);
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.btn-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
         /* 5. GALERIA */
         .galeria-menu {
             display: flex;
@@ -456,17 +475,37 @@ Mais do que doces, entrego experiências cheias de afeto. 💕</p>
     <p>Clique na categoria para visualizar o cardápio em PDF:</p>
 
     <div class="btn-group">
-        <a href="cardapio-cupcakes.pdf" target="_blank" class="btn">🧁 Cupcakes</a>
 
-        <a href="cardapio-bolos.pdf" target="_blank" class="btn">🎂 Bolos</a>
+        <div class="btn-wrapper">
+            <div class="badge">🔥 Os queridinhos do momento</div>
+            <a href="cardapio-cupcakes.pdf" target="_blank" class="btn">🧁 Cupcakes</a>
+        </div>
 
-        <a href="cardapio-macas.pdf" target="_blank" class="btn">🍎 Maçãs do Amor</a>
+        <div class="btn-wrapper">
+            <div class="badge">🔥 Os queridinhos do momento</div>
+            <a href="cardapio-bolos.pdf" target="_blank" class="btn">🎂 Bolos</a>
+        </div>
 
-        <a href="cardapio-suspiros.pdf" target="_blank" class="btn">☁️ Suspiros Artesanais</a>
+        <div class="btn-wrapper">
+            <div class="badge">🔥 Os queridinhos do momento</div>
+            <a href="cardapio-sobremesas.pdf" target="_blank" class="btn">🍮 Sobremesas</a>
+        </div>
 
-        <a href="cardapio-sobremesas.pdf" target="_blank" class="btn">🍮 Sobremesas</a>
+        <div class="btn-wrapper">
+            <div class="badge">Onde tudo começou!</div>
+            <a href="cardapio-macas.pdf" target="_blank" class="btn">🍎 Maçãs do Amor</a>
+        </div>
 
-        <a href="cardapio-brigadeiros.pdf" target="_blank" class="btn">🍫 Brigadeiros</a>
+        <div class="btn-wrapper">
+            <div class="badge">Onde tudo começou!</div>
+            <a href="cardapio-suspiros.pdf" target="_blank" class="btn">☁️ Suspiros Artesanais</a>
+        </div>
+
+        <div class="btn-wrapper">
+            <div class="badge">✨ Você nunca viu nada igual!</div>
+            <a href="cardapio-brigadeiros.pdf" target="_blank" class="btn">🍫 Brigadeiros</a>
+        </div>
+
     </div>
 </div>
 

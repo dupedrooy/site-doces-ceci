@@ -219,7 +219,80 @@
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* BOTÃO FLUTUANTE WHATSAPP */
+        /* INSTAGRAM EMBED */
+        .instagram-section {
+            background: var(--branco);
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+            max-width: 720px;
+            margin: 30px auto 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(251,143,177,0.15);
+        }
+
+        .insta-post {
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            position: relative;
+            background: #ffeef4;
+            cursor: pointer;
+        }
+
+        .insta-post img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .insta-post:hover img { transform: scale(1.08); }
+
+        .insta-overlay {
+            position: absolute; inset: 0;
+            background: rgba(251,143,177,0.55);
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; transition: opacity 0.3s;
+        }
+
+        .insta-post:hover .insta-overlay { opacity: 1; }
+
+        .insta-overlay svg { width: 36px; height: 36px; fill: white; }
+
+        .insta-follow-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 28px;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(220,39,67,0.3);
+        }
+
+        .insta-follow-btn:hover { transform: scale(1.05); filter: brightness(1.1); }
+        .insta-follow-btn svg { width: 22px; height: 22px; fill: white; }
+
+        .insta-placeholder {
+            aspect-ratio: 1/1;
+            background: linear-gradient(135deg, #ffeef4, #f8e8ff);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .instagram-grid { grid-template-columns: repeat(3, 1fr); gap: 3px; }
+        }
         .whatsapp-float {
             position: fixed;
             bottom: 28px;
@@ -346,6 +419,7 @@
             <a href="#cardapios">Cardápios</a>
             <a href="#galeria">Galeria</a>
             <a href="#depoimentos">Depoimentos</a>
+            <a href="#instagram">Instagram</a>
             <a href="#contato">Contato</a>
         </nav>
     </header>
@@ -359,10 +433,10 @@
         <h3>Nossa Doce História</h3>
         <div class="sobre-container">
             <div class="sobre-imagem" id="slider-historia">
-                <img src="hist1.jpg" class="active" alt="História 1">
-                <img src="hist2.jpg" alt="História 2">
-                <img src="hist3.jpg" alt="História 3">
-                <img src="hist4.jpg" alt="História 4">
+                <img src="hist1.jpg" class="active" alt="Ceci e sua família, história da Ceci Doces Gourmet">
+                <img src="hist2.jpg" alt="Momentos especiais que inspiraram a criação da Ceci Doces">
+                <img src="hist3.jpg" alt="A confeiteira Ceci preparando doces artesanais em Curitiba">
+                <img src="hist4.jpg" alt="Doces artesanais feitos com amor pela Ceci Doces Gourmet">
             </div>
             <div class="sobre-texto">
                 <p>A Ceci Doces nasceu de um sonho simples, mas cheio de amor: estar presente.
@@ -399,79 +473,67 @@ Mais do que doces, entrego experiências cheias de afeto. 💕</p>
 
         <div id="bolos" class="tab-content" style="display:block">
             <div class="galeria-grid">
-                <div class="foto-box"><img src="bolo1.jpg"></div>
-                <div class="foto-box"><img src="bolo2.jpg"></div>
-                <div class="foto-box"><img src="bolo3.jpg"></div>
-                <div class="foto-box"><img src="bolo4.jpg"></div>
+                <div class="foto-box"><img src="bolo1.jpg" alt="Bolo festivo decorado pela Ceci Doces Gourmet Curitiba"></div>
+                <div class="foto-box"><img src="bolo2.jpg" alt="Bolo artesanal personalizado Ceci Doces Curitiba"></div>
+                <div class="foto-box"><img src="bolo3.jpg" alt="Bolo de aniversário confeitaria artesanal Curitiba"></div>
+                <div class="foto-box"><img src="bolo4.jpg" alt="Bolo gourmet decorado com detalhes Ceci Doces"></div>
             </div>
         </div>
 
         <div id="brigadeiros" class="tab-content">
             <div class="galeria-grid">
-                <div class="foto-box"><img src="doc1.jpg"></div>
-                <div class="foto-box"><img src="doc2.jpg"></div>
-                <div class="foto-box"><img src="doc3.jpg"></div>
-                <div class="foto-box"><img src="doc4.jpg"></div>
+                <div class="foto-box"><img src="doc1.jpg" alt="Brigadeiros gourmet artesanais Ceci Doces Curitiba"></div>
+                <div class="foto-box"><img src="doc2.jpg" alt="Brigadeiros decorados encomenda Curitiba"></div>
+                <div class="foto-box"><img src="doc3.jpg" alt="Caixa de brigadeiros gourmet Ceci Doces"></div>
+                <div class="foto-box"><img src="doc4.jpg" alt="Brigadeiros finos para eventos Curitiba"></div>
             </div>
         </div>
 
         <div id="sobremesas" class="tab-content">
             <div class="galeria-grid">
-                <div class="foto-box"><img src="sob1.jpg"></div>
-                <div class="foto-box"><img src="sob2.jpg"></div>
-                <div class="foto-box"><img src="sob3.jpg"></div>
-                <div class="foto-box"><img src="sob4.jpg"></div>
+                <div class="foto-box"><img src="sob1.jpg" alt="Sobremesas artesanais Ceci Doces Gourmet Curitiba"></div>
+                <div class="foto-box"><img src="sob2.jpg" alt="Sobremesa gourmet encomenda Curitiba"></div>
+                <div class="foto-box"><img src="sob3.jpg" alt="Doces finos sobremesas Ceci Doces"></div>
+                <div class="foto-box"><img src="sob4.jpg" alt="Sobremesas para festas e eventos Curitiba"></div>
             </div>
         </div>
 
         <div id="macas" class="tab-content">
             <div class="galeria-grid">
-                <div class="foto-box"><img src="maca1.jpg"></div>
-                <div class="foto-box"><img src="maca2.jpg"></div>
-                <div class="foto-box"><img src="maca3.jpg"></div>
-                <div class="foto-box"><img src="maca4.jpg"></div>
+                <div class="foto-box"><img src="maca1.jpg" alt="Maçã do amor artesanal Ceci Doces Curitiba"></div>
+                <div class="foto-box"><img src="maca2.jpg" alt="Maçã do amor decorada encomenda Curitiba"></div>
+                <div class="foto-box"><img src="maca3.jpg" alt="Maçã do amor gourmet Ceci Doces Gourmet"></div>
+                <div class="foto-box"><img src="maca4.jpg" alt="Maçã do amor para festas e eventos Curitiba"></div>
             </div>
         </div>
 
         <div id="cupcakes" class="tab-content">
             <div class="galeria-grid">
-                <div class="foto-box"><img src="cup1.jpg"></div>
-                <div class="foto-box"><img src="cup2.jpg"></div>
-                <div class="foto-box"><img src="cup3.jpg"></div>
-                <div class="foto-box"><img src="cup4.jpg"></div>
+                <div class="foto-box"><img src="cup1.jpg" alt="Cupcakes decorados artesanais Ceci Doces Curitiba"></div>
+                <div class="foto-box"><img src="cup2.jpg" alt="Cupcakes gourmet encomenda Curitiba"></div>
+                <div class="foto-box"><img src="cup3.jpg" alt="Cupcakes personalizados para festas Curitiba"></div>
+                <div class="foto-box"><img src="cup4.jpg" alt="Cupcakes finos Ceci Doces Gourmet"></div>
             </div>
         </div>
 
         <div id="suspiros" class="tab-content">
             <div class="galeria-grid">
-                <div class="foto-box"><img src="susp1.jpg"></div>
-                <div class="foto-box"><img src="susp2.jpg"></div>
-                <div class="foto-box"><img src="susp3.jpg"></div>
-                <div class="foto-box"><img src="susp4.jpg"></div>
+                <div class="foto-box"><img src="susp1.jpg" alt="Suspiros artesanais Ceci Doces Gourmet Curitiba"></div>
+                <div class="foto-box"><img src="susp2.jpg" alt="Suspiros decorados encomenda Curitiba"></div>
+                <div class="foto-box"><img src="susp3.jpg" alt="Suspiros gourmet para festas Curitiba"></div>
+                <div class="foto-box"><img src="susp4.jpg" alt="Suspiros finos Ceci Doces especialidade da casa"></div>
             </div>
         </div>
 
         <div id="pirulitos" class="tab-content">
             <div class="galeria-grid">
-                <div class="foto-box"><img src="piru1.jpg"></div>
-                <div class="foto-box"><img src="piru2.jpg"></div>
-                <div class="foto-box"><img src="piru3.jpg"></div>
-                <div class="foto-box"><img src="piru4.jpg"></div>
+                <div class="foto-box"><img src="piru1.jpg" alt="Pirulitos de chocolate artesanais Ceci Doces Curitiba"></div>
+                <div class="foto-box"><img src="piru2.jpg" alt="Pirulitos decorados encomenda Curitiba"></div>
+                <div class="foto-box"><img src="piru3.jpg" alt="Pirulitos gourmet para festas Curitiba"></div>
+                <div class="foto-box"><img src="piru4.jpg" alt="Pirulitos personalizados Ceci Doces Gourmet"></div>
             </div>
         </div>
 
-        <div class="instagram-redirect">
-            <a href="https://www.instagram.com/docesceci/" target="_blank" class="btn btn-instagram">
-                📸 VEJA MAIS AQUI (Instagram @docesceci)
-            </a>
-        </div>
-    </section>
-
-    <section id="contato" class="contato-section">
-        <h3>Faça seu Pedido</h3>
-        <p>Curitiba e Região Metropolitana.</p>
-        <a href="https://wa.me/c/554192417488" target="_blank" class="btn btn-whatsapp">Chamar no WhatsApp da Ceci</a>
-    </section>
 
     <!-- BOTÃO FLUTUANTE WHATSAPP -->
     <a href="https://wa.me/c/554192417488" target="_blank" class="whatsapp-float" aria-label="Chamar no WhatsApp">
@@ -563,6 +625,43 @@ Mais do que doces, entrego experiências cheias de afeto. 💕</p>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
             Avaliações verificadas no Google
         </div>
+    </section>
+
+    <!-- SEÇÃO INSTAGRAM -->
+    <section class="instagram-section" id="instagram">
+        <h3>No Instagram 📸</h3>
+        <p>Acompanhe nossas criações fresquinhas por lá!</p>
+        <div class="instagram-grid">
+            <!-- As imagens abaixo são as mesmas do site. Para atualizar, substitua pelos src das fotos do Instagram -->
+            <a href="https://www.instagram.com/docesceci/" target="_blank" class="insta-post">
+                <img src="susp1.jpg" alt="Suspiros artesanais Ceci Doces no Instagram">
+                <div class="insta-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+            </a>
+            <a href="https://www.instagram.com/docesceci/" target="_blank" class="insta-post">
+                <img src="maca1.jpg" alt="Maçã do amor Ceci Doces no Instagram">
+                <div class="insta-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+            </a>
+            <a href="https://www.instagram.com/docesceci/" target="_blank" class="insta-post">
+                <img src="bolo1.jpg" alt="Bolo festivo Ceci Doces no Instagram">
+                <div class="insta-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+            </a>
+            <a href="https://www.instagram.com/docesceci/" target="_blank" class="insta-post">
+                <img src="cup1.jpg" alt="Cupcakes Ceci Doces no Instagram">
+                <div class="insta-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+            </a>
+            <a href="https://www.instagram.com/docesceci/" target="_blank" class="insta-post">
+                <img src="doc1.jpg" alt="Brigadeiros Ceci Doces no Instagram">
+                <div class="insta-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+            </a>
+            <a href="https://www.instagram.com/docesceci/" target="_blank" class="insta-post">
+                <img src="piru1.jpg" alt="Pirulitos artesanais Ceci Doces no Instagram">
+                <div class="insta-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+            </a>
+        </div>
+        <a href="https://www.instagram.com/docesceci/" target="_blank" class="insta-follow-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            Seguir @docesceci
+        </a>
     </section>
 
     <footer>

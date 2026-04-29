@@ -129,8 +129,56 @@
             position: relative;
             padding: 60px 10%;
             text-align: center;
-            background: linear-gradient(135deg, #fff0f6 0%, #fce4f0 50%, #f8e8ff 100%);
             overflow: hidden;
+            height: 700px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Carrossel de fundo */
+        .maes-carousel {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .maes-carousel-slide {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+            background: #1a0a10;
+        }
+
+        .maes-carousel-slide.active { opacity: 1; }
+
+        .maes-carousel-slide img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Overlay rosê sobre as fotos */
+        .maes-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(251,143,177,0.55) 0%, rgba(194,24,91,0.50) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Conteúdo fica acima do carrossel */
+        .maes-content {
+            position: relative;
+            z-index: 2;
         }
 
         .maes-section::before,
@@ -138,8 +186,9 @@
             content: '🌸';
             position: absolute;
             font-size: 5rem;
-            opacity: 0.12;
+            opacity: 0.15;
             pointer-events: none;
+            z-index: 2;
         }
 
         .maes-section::before { top: 10px; left: 20px; transform: rotate(-15deg); }
@@ -147,7 +196,8 @@
 
         .maes-badge {
             display: inline-block;
-            background: linear-gradient(135deg, #fb8fb1, #e75480);
+            background: rgba(255,255,255,0.25);
+            backdrop-filter: blur(4px);
             color: white;
             font-size: 0.8rem;
             font-weight: 700;
@@ -156,7 +206,7 @@
             padding: 6px 18px;
             border-radius: 20px;
             margin-bottom: 18px;
-            box-shadow: 0 3px 12px rgba(251,143,177,0.4);
+            border: 1px solid rgba(255,255,255,0.4);
             animation: pulse-maes 2s infinite;
         }
 
@@ -167,45 +217,67 @@
 
         .maes-section h3 {
             font-size: 3.2rem;
-            background: linear-gradient(135deg, #e75480, #c2185b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: white;
+            -webkit-text-fill-color: white;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.2);
             margin-bottom: 12px;
         }
 
         .maes-section p {
             font-size: 1.05rem;
-            color: #888;
+            color: rgba(255,255,255,0.92);
             max-width: 520px;
             margin: 0 auto 30px;
+            text-shadow: 0 1px 6px rgba(0,0,0,0.15);
         }
 
         .btn-maes {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: linear-gradient(135deg, #fb8fb1, #e75480);
-            color: white;
+            background: white;
+            color: #e75480;
             padding: 18px 45px;
             border-radius: 40px;
             text-decoration: none;
             font-weight: 700;
             font-size: 1.15rem;
-            box-shadow: 0 6px 24px rgba(231,84,128,0.35);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.15);
             transition: 0.3s;
             position: relative;
             z-index: 1;
         }
 
-        .btn-maes:hover { transform: scale(1.06); box-shadow: 0 8px 30px rgba(231,84,128,0.5); }
+        .btn-maes:hover { transform: scale(1.06); box-shadow: 0 8px 30px rgba(0,0,0,0.25); }
 
         .maes-flores {
             position: absolute;
             font-size: 1.6rem;
-            opacity: 0.2;
+            opacity: 0.25;
             pointer-events: none;
+            z-index: 2;
         }
+
+        /* Indicadores do carrossel */
+        .maes-dots {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 3;
+        }
+
+        .maes-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .maes-dot.active { background: white; transform: scale(1.3); }
 
         /* CARDAPIO */
         .cardapio-section {
@@ -513,6 +585,8 @@
             .btn { width: 100%; }
             .whatsapp-float span { display: none; }
             .whatsapp-float { padding: 14px; border-radius: 50%; }
+            .maes-foto-lado { width: 100px; }
+            .maes-section { padding: 60px 5%; }
         }
     </style>
 </head>
@@ -563,19 +637,45 @@ Mais do que doces, entrego experiências cheias de afeto. 💕</p>
 
     <!-- SEÇÃO ESPECIAL DIA DAS MÃES -->
     <section class="maes-section" id="dia-das-maes">
+
+        <!-- Carrossel de fundo -->
+        <div class="maes-carousel">
+            <div class="maes-carousel-slide active"><img src="maes1.jpeg" alt="Ensaio Dia das Mães Ceci Doces"></div>
+            <div class="maes-carousel-slide"><img src="maes2.jpeg" alt="Ensaio Dia das Mães Ceci Doces"></div>
+            <div class="maes-carousel-slide"><img src="maes3.jpeg" alt="Ensaio Dia das Mães Ceci Doces"></div>
+            <div class="maes-carousel-slide"><img src="maes4.jpeg" alt="Ensaio Dia das Mães Ceci Doces"></div>
+            <div class="maes-carousel-slide"><img src="maes5.jpeg" alt="Ensaio Dia das Mães Ceci Doces"></div>
+            <div class="maes-carousel-slide"><img src="maes6.jpeg" alt="Ensaio Dia das Mães Ceci Doces"></div>
+        </div>
+        <div class="maes-overlay"></div>
+
+        <!-- Flores decorativas -->
         <span class="maes-flores" style="top:18px; left:8%">🌸</span>
         <span class="maes-flores" style="top:40px; right:10%">🌷</span>
-        <span class="maes-flores" style="bottom:20px; left:15%">🌺</span>
-        <span class="maes-flores" style="bottom:30px; right:8%">🌸</span>
+        <span class="maes-flores" style="bottom:40px; left:15%">🌺</span>
+        <span class="maes-flores" style="bottom:50px; right:8%">🌸</span>
         <span class="maes-flores" style="top:50%; left:3%">🌷</span>
         <span class="maes-flores" style="top:50%; right:3%">🌺</span>
 
-        <div class="maes-badge">✨ Edição Especial</div>
-        <h3>Cardápio Dia das Mães 💐</h3>
-        <p>Uma seleção especial feita com ainda mais carinho para celebrar as mães mais doces do mundo!</p>
-        <a href="cardapio-maes.pdf" target="_blank" class="btn-maes">
-            💐 Ver Cardápio Dia das Mães
-        </a>
+        <!-- Conteúdo -->
+        <div class="maes-content">
+            <div class="maes-badge">✨ Edição Especial</div>
+            <h3>Cardápio Dia das Mães 💐</h3>
+            <p>Uma seleção especial feita com ainda mais carinho para celebrar as mães mais doces do mundo!</p>
+            <a href="cardapio-maes.pdf" target="_blank" class="btn-maes">
+                💐 Ver Cardápio Dia das Mães
+            </a>
+        </div>
+
+        <!-- Indicadores -->
+        <div class="maes-dots">
+            <div class="maes-dot active"></div>
+            <div class="maes-dot"></div>
+            <div class="maes-dot"></div>
+            <div class="maes-dot"></div>
+            <div class="maes-dot"></div>
+            <div class="maes-dot"></div>
+        </div>
     </section>
 
     <div id="cardapios" class="cardapio-section">
@@ -823,6 +923,30 @@ Mais do que doces, entrego experiências cheias de afeto. 💕</p>
             }
         }
         setInterval(showNextSlide, 3000);
+
+        // Carrossel Dia das Mães
+        let maesSlide = 0;
+        const maesSlides = document.querySelectorAll('.maes-carousel-slide');
+        const maesDots = document.querySelectorAll('.maes-dot');
+
+        function showMaesSlide(index) {
+            maesSlides.forEach(s => s.classList.remove('active'));
+            maesDots.forEach(d => d.classList.remove('active'));
+            maesSlides[index].classList.add('active');
+            maesDots[index].classList.add('active');
+        }
+
+        maesDots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                maesSlide = i;
+                showMaesSlide(maesSlide);
+            });
+        });
+
+        setInterval(() => {
+            maesSlide = (maesSlide + 1) % maesSlides.length;
+            showMaesSlide(maesSlide);
+        }, 4000);
     </script>
 </body>
 </html>

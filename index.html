@@ -124,7 +124,90 @@
 
         .sobre-texto { flex: 2; }
 
-        /* 4. CARDÁPIOS (CENTRALIZADO) */
+        /* SEÇÃO DIA DAS MÃES */
+        .maes-section {
+            position: relative;
+            padding: 60px 10%;
+            text-align: center;
+            background: linear-gradient(135deg, #fff0f6 0%, #fce4f0 50%, #f8e8ff 100%);
+            overflow: hidden;
+        }
+
+        .maes-section::before,
+        .maes-section::after {
+            content: '🌸';
+            position: absolute;
+            font-size: 5rem;
+            opacity: 0.12;
+            pointer-events: none;
+        }
+
+        .maes-section::before { top: 10px; left: 20px; transform: rotate(-15deg); }
+        .maes-section::after { bottom: 10px; right: 20px; transform: rotate(15deg); }
+
+        .maes-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #fb8fb1, #e75480);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 6px 18px;
+            border-radius: 20px;
+            margin-bottom: 18px;
+            box-shadow: 0 3px 12px rgba(251,143,177,0.4);
+            animation: pulse-maes 2s infinite;
+        }
+
+        @keyframes pulse-maes {
+            0%, 100% { box-shadow: 0 3px 12px rgba(251,143,177,0.4); }
+            50% { box-shadow: 0 3px 22px rgba(251,143,177,0.75); }
+        }
+
+        .maes-section h3 {
+            font-size: 3.2rem;
+            background: linear-gradient(135deg, #e75480, #c2185b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+        }
+
+        .maes-section p {
+            font-size: 1.05rem;
+            color: #888;
+            max-width: 520px;
+            margin: 0 auto 30px;
+        }
+
+        .btn-maes {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #fb8fb1, #e75480);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.15rem;
+            box-shadow: 0 6px 24px rgba(231,84,128,0.35);
+            transition: 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-maes:hover { transform: scale(1.06); box-shadow: 0 8px 30px rgba(231,84,128,0.5); }
+
+        .maes-flores {
+            position: absolute;
+            font-size: 1.6rem;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        /* CARDAPIO */
         .cardapio-section {
             background-color: var(--branco);
             padding: 50px 10%;
@@ -442,6 +525,7 @@
         </a>
         <nav>
             <a href="#sobre">História</a>
+            <a href="#dia-das-maes">Dia das Mães</a>
             <a href="#cardapios">Cardápios</a>
             <a href="#galeria">Galeria</a>
             <a href="#depoimentos">Depoimentos</a>
@@ -475,6 +559,23 @@ Atualmente, trabalho com suspiros artesanais, bolos, brigadeiros, maçãs do amo
 Mais do que doces, entrego experiências cheias de afeto. 💕</p>
             </div>
         </div>
+    </section>
+
+    <!-- SEÇÃO ESPECIAL DIA DAS MÃES -->
+    <section class="maes-section" id="dia-das-maes">
+        <span class="maes-flores" style="top:18px; left:8%">🌸</span>
+        <span class="maes-flores" style="top:40px; right:10%">🌷</span>
+        <span class="maes-flores" style="bottom:20px; left:15%">🌺</span>
+        <span class="maes-flores" style="bottom:30px; right:8%">🌸</span>
+        <span class="maes-flores" style="top:50%; left:3%">🌷</span>
+        <span class="maes-flores" style="top:50%; right:3%">🌺</span>
+
+        <div class="maes-badge">✨ Edição Especial</div>
+        <h3>Cardápio Dia das Mães 💐</h3>
+        <p>Uma seleção especial feita com ainda mais carinho para celebrar as mães mais doces do mundo!</p>
+        <a href="cardapio-maes.pdf" target="_blank" class="btn-maes">
+            💐 Ver Cardápio Dia das Mães
+        </a>
     </section>
 
     <div id="cardapios" class="cardapio-section">

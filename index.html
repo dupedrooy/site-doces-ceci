@@ -9,18 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --rosa-principal: #ffc1d6;
-            --rosa-escuro: #fb8fb1;
-            --roxo-pascoa: #ba68c8;
+            --azul-principal: #1a3a5c;
+            --azul-medio: #2563a8;
+            --azul-claro: #5b9bd5;
+            --dourado: #c9a84c;
+            --dourado-claro: #f0d080;
             --branco: #ffffff;
-            --texto: #4a2000;
-            --fundo: #fff8ee;
-            /* Cores juninas */
-            --junino-amarelo: #FFB800;
-            --junino-laranja: #e8621a;
-            --junino-vermelho: #c0392b;
-            --junino-verde: #2d6a1f;
-            --junino-marrom: #7a3800;
+            --texto: #2c3e50;
+            --fundo: #f0f4f8;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -31,39 +27,23 @@
             color: var(--texto);
             background-color: var(--fundo);
             background-image:
-                radial-gradient(circle at 10% 20%, rgba(255,184,0,0.07) 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, rgba(232,98,26,0.07) 0%, transparent 50%);
+                radial-gradient(circle at 10% 20%, rgba(37,99,168,0.06) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(201,168,76,0.06) 0%, transparent 50%);
             scroll-behavior: smooth;
         }
 
-        /* Bandeirinhas fixas no topo da página inteira */
-        body::before {
-            content: '🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺';
-            position: fixed;
-            top: 68px;
-            left: 0; right: 0;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            text-align: center;
-            pointer-events: none;
-            z-index: 999;
-            overflow: hidden;
-            white-space: nowrap;
-            opacity: 0.5;
-        }
-
-        /* 1. HEADER JUNINO */
+        /* 1. HEADER DIA DOS PAIS */
         header {
-            background: linear-gradient(135deg, #7a3800 0%, #c0392b 50%, #7a3800 100%);
+            background: linear-gradient(135deg, #0d2137 0%, #1a3a5c 60%, #0d2137 100%);
             padding: 0.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 15px rgba(122,56,0,0.4);
+            box-shadow: 0 4px 15px rgba(13,33,55,0.5);
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 3px solid var(--junino-amarelo);
+            border-bottom: 3px solid var(--dourado);
         }
 
         .logo-group {
@@ -78,7 +58,7 @@
         .logo-group h1 {
             font-family: 'Dancing Script', cursive;
             font-size: 2.2rem;
-            color: var(--junino-amarelo);
+            color: var(--dourado);
             text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
         }
 
@@ -90,9 +70,9 @@
             font-weight: 500;
         }
 
-        nav a:hover { color: var(--junino-amarelo); }
+        nav a:hover { color: var(--dourado); }
 
-        /* 2. BANNER JUNINO */
+        /* 2. BANNER DIA DOS PAIS */
         .hero {
             height: 55vh;
             display: flex;
@@ -105,24 +85,24 @@
             background-position: center;
             background-repeat: no-repeat;
             background-image:
-                linear-gradient(rgba(122,56,0,0.55), rgba(192,57,43,0.45)),
+                linear-gradient(rgba(13,33,55,0.6), rgba(26,58,92,0.5)),
                 url('banner.jpg');
-            border-bottom: 4px dashed var(--junino-amarelo);
+            border-bottom: 4px solid var(--dourado);
         }
 
         .hero h2 {
             font-family: 'Dancing Script', cursive;
             font-size: 4rem;
-            color: var(--junino-amarelo);
-            text-shadow: 2px 2px 0 #7a3800, 0 0 20px rgba(255,184,0,0.5);
+            color: var(--dourado-claro);
+            text-shadow: 2px 2px 0 #0d2137, 0 0 20px rgba(201,168,76,0.5);
         }
 
-        .hero p { color: rgba(255,240,200,0.95); font-weight: 500; }
+        .hero p { color: rgba(220,235,255,0.95); font-weight: 500; }
 
         section { padding: 60px 10%; text-align: center; background-color: var(--fundo); }
-        h3 { font-family: 'Dancing Script', cursive; font-size: 3rem; margin-bottom: 25px; color: var(--junino-marrom); text-align: center; text-shadow: 1px 1px 0 rgba(232,98,26,0.2); }
+        h3 { font-family: 'Dancing Script', cursive; font-size: 3rem; margin-bottom: 25px; color: var(--azul-principal); text-align: center; }
 
-        /* 3. HISTÓRIA - JUNINA */
+        /* 3. HISTÓRIA */
         .sobre-container {
             display: flex;
             align-items: center;
@@ -134,13 +114,13 @@
 
         .sobre-imagem {
             flex: 1;
-            background: #fff3d6;
+            background: #dce8f5;
             aspect-ratio: 1/1;
             border-radius: 20px;
             overflow: hidden;
-            border: 3px solid var(--junino-amarelo);
+            border: 3px solid var(--azul-claro);
             position: relative;
-            box-shadow: 4px 4px 0 var(--junino-laranja);
+            box-shadow: 4px 4px 0 var(--dourado);
         }
 
         .sobre-imagem img {
@@ -158,26 +138,15 @@
 
         .sobre-texto { flex: 2; }
 
-        /* 4. CARDÁPIOS JUNINOS */
+        /* 4. CARDÁPIOS DIA DOS PAIS */
         .cardapio-section {
-            background: linear-gradient(135deg, #fff3d6 0%, #ffe4b5 100%);
+            background: linear-gradient(135deg, #e8f0f8 0%, #dce8f5 100%);
             padding: 50px 10%;
             margin: 20px 0;
-            border-top: 4px dashed var(--junino-laranja);
-            border-bottom: 4px dashed var(--junino-laranja);
+            border-top: 4px solid var(--dourado);
+            border-bottom: 4px solid var(--dourado);
             text-align: center;
             position: relative;
-        }
-
-        .cardapio-section::before {
-            content: '🌽 🎪 🌻 🎉 🌽 🎪 🌻 🎉 🌽 🎪 🌻 🎉 🌽 🎪 🌻';
-            position: absolute;
-            top: 8px; left: 0; right: 0;
-            font-size: 0.85rem;
-            opacity: 0.35;
-            text-align: center;
-            white-space: nowrap;
-            overflow: hidden;
         }
 
         .btn-group {
@@ -190,7 +159,7 @@
 
         .btn {
             display: inline-block;
-            background: linear-gradient(135deg, var(--junino-laranja), var(--junino-vermelho));
+            background: linear-gradient(135deg, var(--azul-medio), var(--azul-principal));
             color: white;
             padding: 18px 40px;
             border-radius: 35px;
@@ -199,10 +168,10 @@
             font-size: 1.1rem;
             transition: 0.3s;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(192,57,43,0.3);
+            box-shadow: 0 4px 12px rgba(26,58,92,0.3);
         }
 
-        .btn-pascoa { background: linear-gradient(135deg, var(--junino-verde), #1a5c0f); }
+        .btn-pascoa { background: linear-gradient(135deg, var(--dourado), #a07828); }
         .btn:hover { transform: scale(1.05); filter: brightness(1.1); }
 
         
@@ -210,8 +179,8 @@
             position: absolute;
             top: -20px;
             left: 8px;
-            background: var(--junino-amarelo);
-            color: var(--junino-marrom);
+            background: var(--dourado);
+            color: var(--azul-principal);
             padding: 4px 10px;
             font-size: 0.6rem;
             border-radius: 12px;
@@ -227,7 +196,7 @@
             display: inline-block;
         }
 
-        /* 5. GALERIA JUNINA */
+        /* 5. GALERIA */
         .galeria-menu {
             display: flex;
             flex-wrap: wrap;
@@ -238,17 +207,17 @@
 
         .tab-btn {
             background: var(--branco);
-            border: 2px solid var(--junino-amarelo);
+            border: 2px solid var(--azul-claro);
             padding: 10px 22px;
             cursor: pointer;
             border-radius: 25px;
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
-            color: var(--junino-marrom);
+            color: var(--azul-principal);
             transition: 0.3s;
         }
 
-        .tab-btn.active { background: var(--junino-laranja); color: white; border-color: var(--junino-laranja); }
+        .tab-btn.active { background: var(--azul-medio); color: white; border-color: var(--azul-medio); }
 
         .tab-content { display: none; animation: fadeIn 0.6s ease; }
 
@@ -259,12 +228,12 @@
         }
 
         .foto-box {
-            background: #fff3d6;
+            background: #dce8f5;
             aspect-ratio: 1/1;
             border-radius: 15px;
             overflow: hidden;
-            border: 2px solid var(--junino-amarelo);
-            box-shadow: 3px 3px 0 rgba(232,98,26,0.2);
+            border: 2px solid var(--azul-claro);
+            box-shadow: 3px 3px 0 rgba(37,99,168,0.15);
         }
 
         .foto-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
@@ -273,38 +242,38 @@
         .instagram-redirect { margin-top: 50px; text-align: center; }
         .btn-instagram {
             background-color: transparent;
-            color: var(--junino-laranja);
-            border: 2px solid var(--junino-laranja);
+            color: var(--azul-medio);
+            border: 2px solid var(--azul-medio);
         }
 
-        /* 6. CONTATO JUNINO */
+        /* 6. CONTATO */
         .contato-section {
-            background: linear-gradient(135deg, #fff3d6 0%, #ffe4b5 100%);
+            background: linear-gradient(135deg, #e8f0f8 0%, #dce8f5 100%);
             padding: 60px 10%;
             text-align: center;
-            border-top: 4px dashed var(--junino-laranja);
+            border-top: 4px solid var(--dourado);
         }
 
         .btn-whatsapp { background: linear-gradient(135deg, #25d366, #128C7E); margin-top: 20px; box-shadow: 0 4px 15px rgba(37,211,102,0.35); }
 
         footer {
-            background: linear-gradient(135deg, #7a3800, #c0392b);
+            background: linear-gradient(135deg, #0d2137, #1a3a5c);
             color: white;
             padding: 40px;
             text-align: center;
-            border-top: 4px solid var(--junino-amarelo);
+            border-top: 4px solid var(--dourado);
         }
 
         footer p { font-size: 0.9rem; opacity: 0.9; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* INSTAGRAM JUNINO */
+        /* INSTAGRAM */
         .instagram-section {
-            background: linear-gradient(135deg, #fff8e6 0%, #fff3d6 100%);
+            background: linear-gradient(135deg, #e8f0f8 0%, #dce8f5 100%);
             padding: 60px 10%;
             text-align: center;
-            border-top: 3px dashed var(--junino-amarelo);
+            border-top: 3px solid var(--dourado);
         }
 
         .instagram-grid {
@@ -407,12 +376,12 @@
             50% { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.75); }
         }
 
-        /* SEÇÃO DEPOIMENTOS JUNINA */
+        /* SEÇÃO DEPOIMENTOS */
         .depoimentos-section {
-            background: linear-gradient(135deg, #fff8e6 0%, #fff3d6 100%);
+            background: linear-gradient(135deg, #e8f0f8 0%, #dce8f5 100%);
             padding: 60px 10%;
             text-align: center;
-            border-top: 3px dashed var(--junino-amarelo);
+            border-top: 3px solid var(--dourado);
         }
 
         .depoimentos-grid {
@@ -427,15 +396,15 @@
             background: white;
             border-radius: 20px;
             padding: 28px 24px;
-            box-shadow: 0 4px 20px rgba(232,98,26,0.12);
-            border: 2px solid var(--junino-amarelo);
+            box-shadow: 0 4px 20px rgba(26,58,92,0.1);
+            border: 2px solid var(--azul-claro);
             text-align: left;
             transition: transform 0.3s;
         }
 
         .depoimento-card:hover { transform: translateY(-4px); }
 
-        .estrelas { color: var(--junino-amarelo); font-size: 1.2rem; margin-bottom: 12px; }
+        .estrelas { color: var(--dourado); font-size: 1.2rem; margin-bottom: 12px; }
 
         .depoimento-texto {
             font-size: 0.95rem;
@@ -455,7 +424,7 @@
             width: 42px;
             height: 42px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--junino-laranja), var(--junino-vermelho));
+            background: linear-gradient(135deg, var(--azul-medio), var(--azul-principal));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -486,22 +455,262 @@
             .btn { width: 100%; }
             .whatsapp-float span { display: none; }
             .whatsapp-float { padding: 14px; border-radius: 50%; }
-            .junina-personagens { display: none; }
-            .junina-section h3 { font-size: 2.2rem; }
+            .pais-content h3 { font-size: 2rem; }
+            .memoria-section h3 { font-size: 2rem; }
         }
 
-        /* ===== SEÇÃO FESTA JUNINA ===== */
-        .junina-section {
+        /* ===== SEÇÃO DIA DOS PAIS ===== */
+        .pais-section {
             position: relative;
             padding: 70px 10%;
             text-align: center;
             overflow: hidden;
-            background: linear-gradient(180deg, #1a0a00 0%, #3d1a00 40%, #7a3800 100%);
-            min-height: 520px;
+            background: linear-gradient(180deg, #0d2137 0%, #1a3a5c 60%, #2563a8 100%);
+            min-height: 480px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+        }
+
+        .pais-carousel {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .pais-slide {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+        }
+
+        .pais-slide.active { opacity: 1; }
+
+        .pais-slide img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0.2;
+        }
+
+        .pais-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(13,33,55,0.75) 0%, rgba(37,99,168,0.6) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .pais-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .pais-badge {
+            display: inline-block;
+            background: var(--dourado);
+            color: var(--azul-principal);
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 20px;
+            border-radius: 20px;
+            margin-bottom: 18px;
+            box-shadow: 0 3px 12px rgba(201,168,76,0.5);
+            animation: pulse-pais 2s infinite;
+        }
+
+        @keyframes pulse-pais {
+            0%, 100% { box-shadow: 0 3px 12px rgba(201,168,76,0.4); }
+            50% { box-shadow: 0 3px 25px rgba(201,168,76,0.8); }
+        }
+
+        .pais-section h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.2rem;
+            color: var(--dourado-claro);
+            text-shadow: 2px 2px 0 #0d2137, 0 0 20px rgba(201,168,76,0.5);
+            margin-bottom: 12px;
+        }
+
+        .pais-section p {
+            font-size: 1.05rem;
+            color: rgba(200,220,255,0.92);
+            max-width: 520px;
+            margin: 0 auto 30px;
+        }
+
+        .btn-pais {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--dourado);
+            color: var(--azul-principal);
+            padding: 18px 45px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 6px 24px rgba(201,168,76,0.4);
+            transition: 0.3s;
+        }
+
+        .btn-pais:hover { transform: scale(1.06); filter: brightness(1.1); }
+
+        .pais-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 3;
+        }
+
+        .pais-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: rgba(201,168,76,0.4);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .pais-dot.active { background: var(--dourado); transform: scale(1.3); }
+
+        /* ===== SEÇÃO EM MEMÓRIA ===== */
+        .memoria-section {
+            position: relative;
+            background: linear-gradient(160deg, #0a1628 0%, #0d2137 50%, #1a3a5c 100%);
+            padding: 80px 10%;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .memoria-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .memoria-estrelas-bg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .memoria-estrela {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: brilhar 3s ease-in-out infinite;
+        }
+
+        @keyframes brilhar {
+            0%, 100% { opacity: 0.15; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.3); }
+        }
+
+        .memoria-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .memoria-foto {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--dourado);
+            box-shadow: 0 0 0 6px rgba(201,168,76,0.2), 0 0 30px rgba(201,168,76,0.3);
+            margin: 0 auto 24px;
+            display: block;
+            animation: brilhar-foto 3s ease-in-out infinite;
+        }
+
+        @keyframes brilhar-foto {
+            0%, 100% { box-shadow: 0 0 0 6px rgba(201,168,76,0.2), 0 0 20px rgba(201,168,76,0.3); }
+            50% { box-shadow: 0 0 0 8px rgba(201,168,76,0.35), 0 0 40px rgba(201,168,76,0.5); }
+        }
+
+        .memoria-icone {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 20px;
+            animation: pulsar-coracao 2s ease-in-out infinite;
+        }
+
+        @keyframes pulsar-coracao {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .memoria-section h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: var(--dourado-claro);
+            text-shadow: 0 0 20px rgba(201,168,76,0.4);
+            margin-bottom: 8px;
+        }
+
+        .memoria-nome {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.4rem;
+            color: white;
+            margin-bottom: 30px;
+            text-shadow: 0 0 15px rgba(255,255,255,0.3);
+        }
+
+        .memoria-divisor {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--dourado), transparent);
+            margin: 0 auto 30px;
+        }
+
+        .memoria-mensagem {
+            font-size: 1.05rem;
+            color: rgba(200,220,255,0.88);
+            line-height: 1.9;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .memoria-assinatura {
+            color: var(--dourado);
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        .memoria-velas {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            font-size: 2rem;
+        }
+
+        .vela {
+            animation: pulsar-vela 1.5s ease-in-out infinite;
+            filter: drop-shadow(0 0 8px rgba(255,200,50,0.6));
+        }
+
+        .vela:nth-child(2) { animation-delay: 0.5s; }
+        .vela:nth-child(3) { animation-delay: 1s; }
+
+        @keyframes pulsar-vela {
+            0%, 100% { transform: scale(1) translateY(0); filter: drop-shadow(0 0 8px rgba(255,200,50,0.6)); }
+            50% { transform: scale(1.05) translateY(-3px); filter: drop-shadow(0 0 14px rgba(255,200,50,0.9)); }
         }
 
         /* Estrelas no céu */
@@ -721,16 +930,7 @@
             cursor: pointer;
         }
 
-        .junina-dot.active { background: #FFD700; transform: scale(1.3); }
-    
-/* ARRAIAL TOPO */
-.arraial-banner{position:relative;background:linear-gradient(135deg,#ffb800,#ff8c00);text-align:center;padding:35px 10px 30px;overflow:hidden;border-bottom:4px dashed #c0392b;}
-.arraial-banner::before{content:'';position:absolute;left:-5%;width:110%;height:40px;top:0;border-bottom:3px solid #5c2c06;border-radius:0 0 50% 50%;}
-.arraial-bandeiras{position:relative;display:flex;justify-content:center;gap:8px;margin-bottom:18px;z-index:2;}
-.arraial-bandeira{width:34px;height:42px;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top center;}
-.arraial-banner h2{font-family:'Dancing Script',cursive;font-size:3rem;color:#7a3800;margin:0;}
-
-</style>
+    </style>
 </head>
 <body>
 
@@ -741,7 +941,8 @@
         </a>
         <nav>
             <a href="#sobre">História</a>
-            <a href="#festa-junina">🎪 Festa Junina</a>
+            <a href="#dia-dos-pais">💙 Dia dos Pais</a>
+            <a href="#em-memoria">🕯️ Em Memória</a>
             <a href="#cardapios">Cardápios</a>
             <a href="#galeria">Galeria</a>
             <a href="#depoimentos">Depoimentos</a>
@@ -749,23 +950,6 @@
             <a href="#contato">Contato</a>
         </nav>
     </header>
-
-<div class="arraial-banner">
-<div class="arraial-bandeiras">
-<div class="arraial-bandeira" style="background:#e63946"></div>
-<div class="arraial-bandeira" style="background:#ffb703"></div>
-<div class="arraial-bandeira" style="background:#2a9d8f"></div>
-<div class="arraial-bandeira" style="background:#fb8500"></div>
-<div class="arraial-bandeira" style="background:#8338ec"></div>
-<div class="arraial-bandeira" style="background:#e63946"></div>
-<div class="arraial-bandeira" style="background:#ffb703"></div>
-<div class="arraial-bandeira" style="background:#2a9d8f"></div>
-<div class="arraial-bandeira" style="background:#fb8500"></div>
-<div class="arraial-bandeira" style="background:#8338ec"></div>
-</div>
-<h2>🎪 Arraiá da Ceci Doces 🎪</h2>
-</div>
-
 
     <section class="hero">
         <h2>Doçura em cada detalhe</h2>
@@ -792,57 +976,64 @@ Atualmente, trabalho com suspiros artesanais, bolos, brigadeiros, maçãs do amo
 Mais do que doces, entrego experiências cheias de afeto. 💕</p>
             </div>
         </div>
-    </section>
 
-    <!-- SEÇÃO FESTA JUNINA -->
-    <section class="junina-section" id="festa-junina">
-
-        <!-- Céu estrelado -->
-        <div class="junina-estrelas" id="estrelas-container"></div>
-
-        <!-- Carrossel de fotos ao fundo -->
-        <div class="junina-carousel" id="junina-carousel">
-            <div class="junina-slide active"><img src="festa1.jpg" alt="Festa Junina Ceci Doces"></div>
-            <div class="junina-slide"><img src="festa2.jpg" alt="Festa Junina Ceci Doces"></div>
-            <div class="junina-slide"><img src="festa3.jpg" alt="Festa Junina Ceci Doces"></div>
-            <div class="junina-slide"><img src="festa4.jpg" alt="Festa Junina Ceci Doces"></div>
-            <div class="junina-slide"><img src="festa5.jpg" alt="Festa Junina Ceci Doces"></div>
-            <div class="junina-slide"><img src="festa6.jpg" alt="Festa Junina Ceci Doces"></div>
+    <!-- SEÇÃO DIA DOS PAIS -->
+    <section class="pais-section" id="dia-dos-pais">
+        <div class="pais-carousel">
+            <div class="pais-slide active"><img src="pais1.jpg" alt="Dia dos Pais Ceci Doces"></div>
+            <div class="pais-slide"><img src="pais2.jpg" alt="Dia dos Pais Ceci Doces"></div>
+            <div class="pais-slide"><img src="pais3.jpg" alt="Dia dos Pais Ceci Doces"></div>
+            <div class="pais-slide"><img src="pais4.jpg" alt="Dia dos Pais Ceci Doces"></div>
+            <div class="pais-slide"><img src="pais5.jpg" alt="Dia dos Pais Ceci Doces"></div>
+            <div class="pais-slide"><img src="pais6.jpg" alt="Dia dos Pais Ceci Doces"></div>
         </div>
+        <div class="pais-overlay"></div>
 
-        <!-- Bandeirinhas no topo -->
-        <div class="bandeirinhas-container" id="bandeirinhas"></div>
-
-        <!-- Conteúdo central -->
-        <div class="junina-content">
-            <div class="junina-badge">🌽 Edição Especial Junina</div>
-            <h3>Arraiá da Ceci Doces! 🎉</h3>
-            <p>Doces caipiras feitos com todo o amor e tradição para o seu arraiá ficar ainda mais gostoso!</p>
+        <div class="pais-content">
+            <div class="pais-badge">💙 Edição Especial</div>
+            <h3>Cardápio Dia dos Pais 👔</h3>
+            <p>Doces especiais preparados com muito carinho para celebrar os pais mais incríveis do mundo!</p>
+            <a href="cardapio-pais.pdf" target="_blank" class="btn-pais">
+                👔 Ver Cardápio Dia dos Pais
             </a>
         </div>
 
-        <!-- Dots -->
-        <div class="junina-dots">
-            <div class="junina-dot active"></div>
-            <div class="junina-dot"></div>
-            <div class="junina-dot"></div>
-            <div class="junina-dot"></div>
-            <div class="junina-dot"></div>
-            <div class="junina-dot"></div>
+        <div class="pais-dots">
+            <div class="pais-dot active"></div>
+            <div class="pais-dot"></div>
+            <div class="pais-dot"></div>
+            <div class="pais-dot"></div>
+            <div class="pais-dot"></div>
+            <div class="pais-dot"></div>
         </div>
+    </section>
 
-        <!-- Fogueira central -->
-        <div class="fogueira">🔥</div>
+    <!-- SEÇÃO EM MEMÓRIA -->
+    <section class="memoria-section" id="em-memoria">
+        <div class="memoria-estrelas-bg" id="memoria-estrelas"></div>
 
-        <!-- Personagens dançando -->
-        <div class="junina-personagens">
-            <div class="personagem">🤠</div>
-            <div class="personagem">🌽</div>
-            <div class="personagem">💃</div>
-            <div class="personagem">🌻</div>
-            <div class="personagem">🤠</div>
+        <div class="memoria-content">
+            <span class="memoria-icone">💙</span>
+            <img src="uziel.jpg" alt="Uziel Pedro" class="memoria-foto">
+            <h3>Em Memória</h3>
+            <div class="memoria-nome">Uziel Pedro</div>
+            <div class="memoria-divisor"></div>
+            <p class="memoria-mensagem">
+                Este cardápio foi feito com todo o amor do mundo em sua homenagem.<br><br>
+                Pai, mesmo que você não esteja mais aqui para provar cada docinho que faço,
+                sei que você está presente em cada receita, em cada detalhe, em cada sorriso
+                que esses doces arrancam das pessoas.<br><br>
+                Você foi e sempre será minha maior inspiração. Tudo o que faço tem um pouquinho
+                de você — do seu amor, da sua força, do seu jeito de ser. Este Dia dos Pais é
+                para você, com saudade e com um amor que não tem fim. 💙
+            </p>
+            <div class="memoria-assinatura">Com amor eterno — sua família 🤍</div>
+            <div class="memoria-velas">
+                <span class="vela">🕯️</span>
+                <span class="vela">💙</span>
+                <span class="vela">🕯️</span>
+            </div>
         </div>
-
     </section>
 
     <div id="cardapios" class="cardapio-section">
@@ -1080,18 +1271,17 @@ Mais do que doces, entrego experiências cheias de afeto. 💕</p>
             evt.currentTarget.classList.add("active");
         }
 
-        // Decoração junina nas seções
-        const decorJunina = [
-            { id: 'sobre', emoji: '🌻', pos: 'top:20px;right:20px;font-size:2rem;opacity:0.2;position:absolute;pointer-events:none;' },
-            { id: 'sobre', emoji: '🌽', pos: 'bottom:20px;left:20px;font-size:2rem;opacity:0.2;position:absolute;pointer-events:none;' },
-            { id: 'galeria', emoji: '🎪', pos: 'top:20px;right:20px;font-size:2rem;opacity:0.2;position:absolute;pointer-events:none;' },
-            { id: 'galeria', emoji: '🤠', pos: 'top:20px;left:20px;font-size:2rem;opacity:0.2;position:absolute;pointer-events:none;' },
-            { id: 'depoimentos', emoji: '🌻', pos: 'top:20px;right:20px;font-size:2rem;opacity:0.2;position:absolute;pointer-events:none;' },
-            { id: 'instagram', emoji: '🎉', pos: 'top:20px;left:20px;font-size:2rem;opacity:0.2;position:absolute;pointer-events:none;' },
-            { id: 'contato', emoji: '🔥', pos: 'top:20px;right:20px;font-size:2rem;opacity:0.2;position:absolute;pointer-events:none;' },
+        // Decoração Dia dos Pais nas seções
+        const decorPais = [
+            { id: 'sobre', emoji: '💙', pos: 'top:20px;right:20px;font-size:2rem;opacity:0.2;position:absolute;pointer-events:none;' },
+            { id: 'sobre', emoji: '👔', pos: 'bottom:20px;left:20px;font-size:2rem;opacity:0.2;position:absolute;pointer-events:none;' },
+            { id: 'galeria', emoji: '💙', pos: 'top:20px;right:20px;font-size:2rem;opacity:0.2;position:absolute;pointer-events:none;' },
+            { id: 'galeria', emoji: '🎁', pos: 'top:20px;left:20px;font-size:2rem;opacity:0.2;position:absolute;pointer-events:none;' },
+            { id: 'depoimentos', emoji: '💙', pos: 'top:20px;right:20px;font-size:2rem;opacity:0.2;position:absolute;pointer-events:none;' },
+            { id: 'contato', emoji: '👔', pos: 'top:20px;right:20px;font-size:2rem;opacity:0.2;position:absolute;pointer-events:none;' },
         ];
-        decorJunina.forEach(({ id, emoji, pos }) => {
-            const el = document.getElementById(id) || document.querySelector(`[id="${id}"]`);
+        decorPais.forEach(({ id, emoji, pos }) => {
+            const el = document.getElementById(id);
             if (el) {
                 el.style.position = 'relative';
                 const span = document.createElement('span');
@@ -1100,6 +1290,7 @@ Mais do que doces, entrego experiências cheias de afeto. 💕</p>
                 el.appendChild(span);
             }
         });
+
         const slides = document.querySelectorAll('#slider-historia img');
         function showNextSlide() {
             if (slides.length > 1) {
@@ -1110,71 +1301,42 @@ Mais do que doces, entrego experiências cheias de afeto. 💕</p>
         }
         setInterval(showNextSlide, 3000);
 
-        // ===== FESTA JUNINA =====
+        // Carrossel Dia dos Pais
+        let paisSlide = 0;
+        const paisSlides = document.querySelectorAll('.pais-slide');
+        const paisDots = document.querySelectorAll('.pais-dot');
 
-        // Estrelas no céu
-        const estrelasContainer = document.getElementById('estrelas-container');
-        for (let i = 0; i < 60; i++) {
-            const e = document.createElement('div');
-            e.className = 'estrela';
-            e.style.left = Math.random() * 100 + '%';
-            e.style.top = Math.random() * 60 + '%';
-            e.style.animationDelay = Math.random() * 3 + 's';
-            e.style.width = e.style.height = (Math.random() * 2 + 1) + 'px';
-            estrelasContainer.appendChild(e);
+        function showPaisSlide(index) {
+            paisSlides.forEach(s => s.classList.remove('active'));
+            paisDots.forEach(d => d.classList.remove('active'));
+            paisSlides[index].classList.add('active');
+            paisDots[index].classList.add('active');
         }
 
-        // Bandeirinhas coloridas
-        const cores = ['#e63946','#f4a261','#2a9d8f','#e9c46a','#264653','#e76f51','#8ecae6','#ffb703','#fb8500','#bc4749'];
-        const fio = document.getElementById('bandeirinhas');
-        const fioEl = document.createElement('div');
-        fioEl.className = 'bandeirinhas-fio';
-        fio.appendChild(fioEl);
-        for (let i = 0; i < 40; i++) {
-            const b = document.createElement('div');
-            b.className = 'bandeirinha';
-            b.style.left = (i * 2.6) + '%';
-            b.style.background = cores[i % cores.length];
-            b.style.animationDelay = (i * 0.1) + 's';
-            b.style.animationDuration = (2 + Math.random()) + 's';
-            fio.appendChild(b);
-        }
-
-        // Segunda fileira de bandeirinhas
-        const fio2 = document.createElement('div');
-        fio2.style.cssText = 'position:absolute;top:35px;left:-20px;right:-20px;height:2px;background:#6B4E0A;';
-        fio.appendChild(fio2);
-        for (let i = 0; i < 38; i++) {
-            const b = document.createElement('div');
-            b.className = 'bandeirinha';
-            b.style.left = (i * 2.7 + 1.3) + '%';
-            b.style.top = '35px';
-            b.style.background = cores[(i + 5) % cores.length];
-            b.style.animationDelay = (i * 0.12 + 0.5) + 's';
-            b.style.animationDuration = (2.5 + Math.random()) + 's';
-            fio.appendChild(b);
-        }
-
-        // Carrossel festa junina
-        let juninaSlide = 0;
-        const juninaSlides = document.querySelectorAll('.junina-slide');
-        const juninaDots = document.querySelectorAll('.junina-dot');
-
-        function showJuninaSlide(index) {
-            juninaSlides.forEach(s => s.classList.remove('active'));
-            juninaDots.forEach(d => d.classList.remove('active'));
-            juninaSlides[index].classList.add('active');
-            juninaDots[index].classList.add('active');
-        }
-
-        juninaDots.forEach((dot, i) => {
-            dot.addEventListener('click', () => { juninaSlide = i; showJuninaSlide(i); });
+        paisDots.forEach((dot, i) => {
+            dot.addEventListener('click', () => { paisSlide = i; showPaisSlide(i); });
         });
 
         setInterval(() => {
-            juninaSlide = (juninaSlide + 1) % juninaSlides.length;
-            showJuninaSlide(juninaSlide);
+            paisSlide = (paisSlide + 1) % paisSlides.length;
+            showPaisSlide(paisSlide);
         }, 4000);
+
+        // Estrelas na seção Em Memória
+        const memoriaEstrelas = document.getElementById('memoria-estrelas');
+        if (memoriaEstrelas) {
+            for (let i = 0; i < 50; i++) {
+                const e = document.createElement('div');
+                e.className = 'memoria-estrela';
+                e.style.left = Math.random() * 100 + '%';
+                e.style.top = Math.random() * 100 + '%';
+                e.style.animationDelay = Math.random() * 4 + 's';
+                e.style.animationDuration = (2 + Math.random() * 3) + 's';
+                const size = (Math.random() * 2.5 + 1) + 'px';
+                e.style.width = e.style.height = size;
+                memoriaEstrelas.appendChild(e);
+            }
+        }
     </script>
 </body>
 </html>

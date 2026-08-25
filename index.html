@@ -9,14 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --azul-principal: #1a3a5c;
-            --azul-medio: #2563a8;
-            --azul-claro: #5b9bd5;
-            --dourado: #c9a84c;
-            --dourado-claro: #f0d080;
+            --rosa-principal: #ffc1d6;
+            --rosa-escuro: #fb8fb1;
+            --roxo-pascoa: #ba68c8;
             --branco: #ffffff;
-            --texto: #2c3e50;
-            --fundo: #f0f4f8;
+            --texto: #555;
+            --fundo: #fff9fb;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -26,24 +24,20 @@
             line-height: 1.6;
             color: var(--texto);
             background-color: var(--fundo);
-            background-image:
-                radial-gradient(circle at 10% 20%, rgba(37,99,168,0.06) 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, rgba(201,168,76,0.06) 0%, transparent 50%);
             scroll-behavior: smooth;
         }
 
-        /* 1. HEADER DIA DOS PAIS */
+        /* 1. LOGO E NOME */
         header {
-            background: linear-gradient(135deg, #0d2137 0%, #1a3a5c 60%, #0d2137 100%);
+            background-color: var(--branco);
             padding: 0.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 15px rgba(13,33,55,0.5);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 3px solid var(--dourado);
         }
 
         .logo-group {
@@ -58,21 +52,19 @@
         .logo-group h1 {
             font-family: 'Dancing Script', cursive;
             font-size: 2.2rem;
-            color: var(--dourado);
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+            color: var(--rosa-escuro);
         }
 
         nav a {
             text-decoration: none;
-            color: rgba(255,255,255,0.9);
+            color: var(--texto);
             margin-left: 20px;
             transition: color 0.3s;
-            font-weight: 500;
         }
 
-        nav a:hover { color: var(--dourado); }
+        nav a:hover { color: var(--rosa-escuro); }
 
-        /* 2. BANNER DIA DOS PAIS */
+        /* 2. BANNER COM DEGRADÊ */
         .hero {
             height: 55vh;
             display: flex;
@@ -84,25 +76,20 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-image:
-                linear-gradient(rgba(13,33,55,0.6), rgba(26,58,92,0.5)),
-                url('banner.jpg');
-            border-bottom: 4px solid var(--dourado);
+            background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('banner.jpg');
         }
 
-        .hero h2 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 4rem;
-            color: var(--dourado-claro);
-            text-shadow: 2px 2px 0 #0d2137, 0 0 20px rgba(201,168,76,0.5);
+        .hero h2 { 
+            font-family: 'Dancing Script', cursive; 
+            font-size: 4rem; 
+            color: var(--rosa-escuro); 
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
         }
 
-        .hero p { color: rgba(220,235,255,0.95); font-weight: 500; }
+        section { padding: 60px 10%; text-align: center; }
+        h3 { font-family: 'Dancing Script', cursive; font-size: 3rem; margin-bottom: 25px; color: var(--rosa-escuro); text-align: center; }
 
-        section { padding: 60px 10%; text-align: center; background-color: var(--fundo); }
-        h3 { font-family: 'Dancing Script', cursive; font-size: 3rem; margin-bottom: 25px; color: var(--azul-principal); text-align: center; }
-
-        /* 3. HISTÓRIA */
+        /* 3. MINHA HISTÓRIA COM SLIDER */
         .sobre-container {
             display: flex;
             align-items: center;
@@ -114,13 +101,12 @@
 
         .sobre-imagem {
             flex: 1;
-            background: #dce8f5;
+            background: #ffeef4;
             aspect-ratio: 1/1;
             border-radius: 20px;
             overflow: hidden;
-            border: 3px solid var(--azul-claro);
+            border: 2px solid var(--rosa-principal);
             position: relative;
-            box-shadow: 4px 4px 0 var(--dourado);
         }
 
         .sobre-imagem img {
@@ -138,15 +124,13 @@
 
         .sobre-texto { flex: 2; }
 
-        /* 4. CARDÁPIOS DIA DOS PAIS */
+        /* 4. CARDÁPIOS (CENTRALIZADO) */
         .cardapio-section {
-            background: linear-gradient(135deg, #e8f0f8 0%, #dce8f5 100%);
+            background-color: var(--branco);
             padding: 50px 10%;
             margin: 20px 0;
-            border-top: 4px solid var(--dourado);
-            border-bottom: 4px solid var(--dourado);
+            box-shadow: inset 0 0 20px rgba(255, 193, 214, 0.1);
             text-align: center;
-            position: relative;
         }
 
         .btn-group {
@@ -159,7 +143,7 @@
 
         .btn {
             display: inline-block;
-            background: linear-gradient(135deg, var(--azul-medio), var(--azul-principal));
+            background-color: var(--rosa-escuro);
             color: white;
             padding: 18px 40px;
             border-radius: 35px;
@@ -168,33 +152,36 @@
             font-size: 1.1rem;
             transition: 0.3s;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(26,58,92,0.3);
         }
 
-        .btn-pascoa { background: linear-gradient(135deg, var(--dourado), #a07828); }
+        .btn-pascoa { background-color: var(--roxo-pascoa); }
         .btn:hover { transform: scale(1.05); filter: brightness(1.1); }
 
         
         .badge {
-            position: absolute;
-            top: -20px;
-            left: 8px;
-            background: var(--dourado);
-            color: var(--azul-principal);
-            padding: 4px 10px;
-            font-size: 0.6rem;
-            border-radius: 12px;
-            font-weight: 700;
-            transform: rotate(-10deg);
-            white-space: nowrap;
-            border: 2px solid white;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2), 0 0 0 2px rgba(255,255,255,0.6);
-        }
+    position: absolute;
+    top: -20px;
+    left: 8px;
+    background: #fb8fb1;
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.6rem;
+    border-radius: 12px;
+    font-weight: 600;
+    transform: rotate(-10deg);
+    white-space: nowrap;
 
-        .btn-wrapper {
-            position: relative;
-            display: inline-block;
-        }
+    /* ✨ efeito adesivo */
+    border: 2px solid white;
+    box-shadow: 
+        0 2px 6px rgba(0,0,0,0.15),
+        0 0 0 2px rgba(255,255,255,0.6);
+}
+
+.btn-wrapper {
+    position: relative;
+    display: inline-block;
+}
 
         /* 5. GALERIA */
         .galeria-menu {
@@ -207,17 +194,17 @@
 
         .tab-btn {
             background: var(--branco);
-            border: 2px solid var(--azul-claro);
+            border: 2px solid var(--rosa-principal);
             padding: 10px 22px;
             cursor: pointer;
             border-radius: 25px;
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
-            color: var(--azul-principal);
+            color: var(--texto);
             transition: 0.3s;
         }
 
-        .tab-btn.active { background: var(--azul-medio); color: white; border-color: var(--azul-medio); }
+        .tab-btn.active { background-color: var(--rosa-escuro); color: white; border-color: var(--rosa-escuro); }
 
         .tab-content { display: none; animation: fadeIn 0.6s ease; }
 
@@ -228,12 +215,11 @@
         }
 
         .foto-box {
-            background: #dce8f5;
+            background: #ffeef4;
             aspect-ratio: 1/1;
             border-radius: 15px;
             overflow: hidden;
-            border: 2px solid var(--azul-claro);
-            box-shadow: 3px 3px 0 rgba(37,99,168,0.15);
+            border: 1px solid var(--rosa-principal);
         }
 
         .foto-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
@@ -242,38 +228,28 @@
         .instagram-redirect { margin-top: 50px; text-align: center; }
         .btn-instagram {
             background-color: transparent;
-            color: var(--azul-medio);
-            border: 2px solid var(--azul-medio);
+            color: var(--rosa-escuro);
+            border: 2px solid var(--rosa-escuro);
         }
 
-        /* 6. CONTATO */
+        /* 6. WHATSAPP */
         .contato-section {
-            background: linear-gradient(135deg, #e8f0f8 0%, #dce8f5 100%);
+            background-color: var(--branco);
             padding: 60px 10%;
             text-align: center;
-            border-top: 4px solid var(--dourado);
         }
 
-        .btn-whatsapp { background: linear-gradient(135deg, #25d366, #128C7E); margin-top: 20px; box-shadow: 0 4px 15px rgba(37,211,102,0.35); }
+        .btn-whatsapp { background-color: #25d366; margin-top: 20px; }
 
-        footer {
-            background: linear-gradient(135deg, #0d2137, #1a3a5c);
-            color: white;
-            padding: 40px;
-            text-align: center;
-            border-top: 4px solid var(--dourado);
-        }
-
-        footer p { font-size: 0.9rem; opacity: 0.9; }
+        footer { background-color: var(--rosa-principal); color: white; padding: 40px; text-align: center; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* INSTAGRAM */
+        /* INSTAGRAM EMBED */
         .instagram-section {
-            background: linear-gradient(135deg, #e8f0f8 0%, #dce8f5 100%);
+            background: var(--branco);
             padding: 60px 10%;
             text-align: center;
-            border-top: 3px solid var(--dourado);
         }
 
         .instagram-grid {
@@ -378,10 +354,9 @@
 
         /* SEÇÃO DEPOIMENTOS */
         .depoimentos-section {
-            background: linear-gradient(135deg, #e8f0f8 0%, #dce8f5 100%);
+            background: linear-gradient(135deg, #fff0f6 0%, #fdf6ff 100%);
             padding: 60px 10%;
             text-align: center;
-            border-top: 3px solid var(--dourado);
         }
 
         .depoimentos-grid {
@@ -396,15 +371,15 @@
             background: white;
             border-radius: 20px;
             padding: 28px 24px;
-            box-shadow: 0 4px 20px rgba(26,58,92,0.1);
-            border: 2px solid var(--azul-claro);
+            box-shadow: 0 4px 20px rgba(251, 143, 177, 0.12);
+            border: 1px solid #ffd6e7;
             text-align: left;
             transition: transform 0.3s;
         }
 
         .depoimento-card:hover { transform: translateY(-4px); }
 
-        .estrelas { color: var(--dourado); font-size: 1.2rem; margin-bottom: 12px; }
+        .estrelas { color: #f7b731; font-size: 1.2rem; margin-bottom: 12px; }
 
         .depoimento-texto {
             font-size: 0.95rem;
@@ -424,7 +399,7 @@
             width: 42px;
             height: 42px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--azul-medio), var(--azul-principal));
+            background: linear-gradient(135deg, var(--rosa-principal), var(--rosa-escuro));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -455,481 +430,7 @@
             .btn { width: 100%; }
             .whatsapp-float span { display: none; }
             .whatsapp-float { padding: 14px; border-radius: 50%; }
-            .pais-content h3 { font-size: 2rem; }
-            .memoria-section h3 { font-size: 2rem; }
         }
-
-        /* ===== SEÇÃO DIA DOS PAIS ===== */
-        .pais-section {
-            position: relative;
-            padding: 70px 10%;
-            text-align: center;
-            overflow: hidden;
-            background: linear-gradient(180deg, #0d2137 0%, #1a3a5c 60%, #2563a8 100%);
-            min-height: 480px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .pais-carousel {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-        }
-
-        .pais-slide {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 1.2s ease-in-out;
-        }
-
-        .pais-slide.active { opacity: 1; }
-
-        .pais-slide img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            opacity: 0.2;
-        }
-
-        .pais-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(13,33,55,0.75) 0%, rgba(37,99,168,0.6) 100%);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .pais-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .pais-badge {
-            display: inline-block;
-            background: var(--dourado);
-            color: var(--azul-principal);
-            font-size: 0.8rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            padding: 6px 20px;
-            border-radius: 20px;
-            margin-bottom: 18px;
-            box-shadow: 0 3px 12px rgba(201,168,76,0.5);
-            animation: pulse-pais 2s infinite;
-        }
-
-        @keyframes pulse-pais {
-            0%, 100% { box-shadow: 0 3px 12px rgba(201,168,76,0.4); }
-            50% { box-shadow: 0 3px 25px rgba(201,168,76,0.8); }
-        }
-
-        .pais-section h3 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 3.2rem;
-            color: var(--dourado-claro);
-            text-shadow: 2px 2px 0 #0d2137, 0 0 20px rgba(201,168,76,0.5);
-            margin-bottom: 12px;
-        }
-
-        .pais-section p {
-            font-size: 1.05rem;
-            color: rgba(200,220,255,0.92);
-            max-width: 520px;
-            margin: 0 auto 30px;
-        }
-
-        .btn-pais {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--dourado);
-            color: var(--azul-principal);
-            padding: 18px 45px;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            box-shadow: 0 6px 24px rgba(201,168,76,0.4);
-            transition: 0.3s;
-        }
-
-        .btn-pais:hover { transform: scale(1.06); filter: brightness(1.1); }
-
-        .pais-dots {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 8px;
-            z-index: 3;
-        }
-
-        .pais-dot {
-            width: 8px; height: 8px;
-            border-radius: 50%;
-            background: rgba(201,168,76,0.4);
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .pais-dot.active { background: var(--dourado); transform: scale(1.3); }
-
-        /* ===== SEÇÃO EM MEMÓRIA ===== */
-        .memoria-section {
-            position: relative;
-            background: linear-gradient(160deg, #0a1628 0%, #0d2137 50%, #1a3a5c 100%);
-            padding: 80px 10%;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .memoria-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            pointer-events: none;
-        }
-
-        .memoria-estrelas-bg {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .memoria-estrela {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            animation: brilhar 3s ease-in-out infinite;
-        }
-
-        @keyframes brilhar {
-            0%, 100% { opacity: 0.15; transform: scale(1); }
-            50% { opacity: 0.6; transform: scale(1.3); }
-        }
-
-        .memoria-content {
-            position: relative;
-            z-index: 2;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .memoria-foto {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--dourado);
-            box-shadow: 0 0 0 6px rgba(201,168,76,0.2), 0 0 30px rgba(201,168,76,0.3);
-            margin: 0 auto 24px;
-            display: block;
-            animation: brilhar-foto 3s ease-in-out infinite;
-        }
-
-        @keyframes brilhar-foto {
-            0%, 100% { box-shadow: 0 0 0 6px rgba(201,168,76,0.2), 0 0 20px rgba(201,168,76,0.3); }
-            50% { box-shadow: 0 0 0 8px rgba(201,168,76,0.35), 0 0 40px rgba(201,168,76,0.5); }
-        }
-
-        .memoria-icone {
-            font-size: 4rem;
-            display: block;
-            margin-bottom: 20px;
-            animation: pulsar-coracao 2s ease-in-out infinite;
-        }
-
-        @keyframes pulsar-coracao {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        .memoria-section h3 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 3rem;
-            color: var(--dourado-claro);
-            text-shadow: 0 0 20px rgba(201,168,76,0.4);
-            margin-bottom: 8px;
-        }
-
-        .memoria-nome {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.4rem;
-            color: white;
-            margin-bottom: 30px;
-            text-shadow: 0 0 15px rgba(255,255,255,0.3);
-        }
-
-        .memoria-divisor {
-            width: 80px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--dourado), transparent);
-            margin: 0 auto 30px;
-        }
-
-        .memoria-mensagem {
-            font-size: 1.05rem;
-            color: rgba(200,220,255,0.88);
-            line-height: 1.9;
-            font-style: italic;
-            margin-bottom: 30px;
-        }
-
-        .memoria-assinatura {
-            color: var(--dourado);
-            font-weight: 600;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
-        }
-
-        .memoria-velas {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-            font-size: 2rem;
-        }
-
-        .vela {
-            animation: pulsar-vela 1.5s ease-in-out infinite;
-            filter: drop-shadow(0 0 8px rgba(255,200,50,0.6));
-        }
-
-        .vela:nth-child(2) { animation-delay: 0.5s; }
-        .vela:nth-child(3) { animation-delay: 1s; }
-
-        @keyframes pulsar-vela {
-            0%, 100% { transform: scale(1) translateY(0); filter: drop-shadow(0 0 8px rgba(255,200,50,0.6)); }
-            50% { transform: scale(1.05) translateY(-3px); filter: drop-shadow(0 0 14px rgba(255,200,50,0.9)); }
-        }
-
-        /* Estrelas no céu */
-        .junina-estrelas {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .estrela {
-            position: absolute;
-            width: 3px; height: 3px;
-            background: white;
-            border-radius: 50%;
-            animation: piscar 2s infinite;
-        }
-
-        @keyframes piscar {
-            0%, 100% { opacity: 1; } 50% { opacity: 0.2; }
-        }
-
-        /* Bandeirinhas */
-        .bandeirinhas-container {
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 80px;
-            pointer-events: none;
-            z-index: 2;
-            overflow: hidden;
-        }
-
-        .bandeirinhas-fio {
-            position: absolute;
-            top: 0; left: -20px; right: -20px;
-            height: 2px;
-            background: #8B6914;
-        }
-
-        .bandeirinhas-fio::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 60px;
-            background: repeating-linear-gradient(
-                90deg,
-                transparent 0px,
-                transparent 18px,
-                #8B6914 18px,
-                #8B6914 20px
-            );
-        }
-
-        .bandeirinha {
-            position: absolute;
-            top: 0;
-            width: 22px;
-            height: 30px;
-            clip-path: polygon(0 0, 100% 0, 50% 100%);
-            animation: balancear 3s ease-in-out infinite;
-        }
-
-        @keyframes balancear {
-            0%, 100% { transform: rotate(-5deg); }
-            50% { transform: rotate(5deg); }
-        }
-
-        /* Carrossel fotos festa */
-        .junina-carousel {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-        }
-
-        .junina-slide {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 1.2s ease-in-out;
-        }
-
-        .junina-slide.active { opacity: 1; }
-
-        .junina-slide img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            object-position: center;
-            opacity: 0.25;
-        }
-
-        /* Personagens */
-        .junina-personagens {
-            position: absolute;
-            bottom: 0;
-            left: 0; right: 0;
-            height: 160px;
-            pointer-events: none;
-            z-index: 3;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            padding: 0 40px;
-        }
-
-        .personagem {
-            font-size: 5rem;
-            line-height: 1;
-            animation: pular 2s ease-in-out infinite;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
-        }
-
-        .personagem:nth-child(2) { animation-delay: 0.4s; font-size: 4rem; }
-        .personagem:nth-child(3) { animation-delay: 0.8s; }
-        .personagem:nth-child(4) { animation-delay: 0.3s; font-size: 4rem; }
-        .personagem:nth-child(5) { animation-delay: 0.6s; }
-
-        @keyframes pular {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
-        }
-
-        /* Fogueira */
-        .fogueira {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 3.5rem;
-            z-index: 3;
-            animation: fogueira-anim 0.5s ease-in-out infinite alternate;
-            filter: drop-shadow(0 0 12px rgba(255,150,0,0.8));
-        }
-
-        @keyframes fogueira-anim {
-            0% { transform: translateX(-50%) scale(1); }
-            100% { transform: translateX(-50%) scale(1.08) rotate(2deg); }
-        }
-
-        /* Conteúdo central */
-        .junina-content {
-            position: relative;
-            z-index: 4;
-            padding-bottom: 120px;
-        }
-
-        .junina-badge {
-            display: inline-block;
-            background: #e8a000;
-            color: #3d1a00;
-            font-size: 0.8rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            padding: 6px 20px;
-            border-radius: 20px;
-            margin-bottom: 18px;
-            box-shadow: 0 3px 12px rgba(232,160,0,0.5);
-            animation: pulse-junina 2s infinite;
-        }
-
-        @keyframes pulse-junina {
-            0%, 100% { box-shadow: 0 3px 12px rgba(232,160,0,0.5); }
-            50% { box-shadow: 0 3px 25px rgba(232,160,0,0.9); }
-        }
-
-        .junina-section h3 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 3.2rem;
-            color: #FFD700;
-            text-shadow: 2px 2px 0 #8B4513, 0 0 20px rgba(255,200,0,0.6);
-            margin-bottom: 12px;
-        }
-
-        .junina-section p {
-            font-size: 1.05rem;
-            color: rgba(255,230,150,0.9);
-            max-width: 520px;
-            margin: 0 auto 30px;
-        }
-
-        .btn-junina {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #e8a000, #c67c00);
-            color: white;
-            padding: 18px 45px;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            box-shadow: 0 6px 24px rgba(200,120,0,0.5);
-            transition: 0.3s;
-        }
-
-        .btn-junina:hover { transform: scale(1.06); filter: brightness(1.1); }
-
-        /* Dots */
-        .junina-dots {
-            position: absolute;
-            bottom: 170px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 8px;
-            z-index: 5;
-        }
-
-        .junina-dot {
-            width: 8px; height: 8px;
-            border-radius: 50%;
-            background: rgba(255,215,0,0.4);
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
     </style>
 </head>
 <body>
@@ -941,8 +442,6 @@
         </a>
         <nav>
             <a href="#sobre">História</a>
-            <a href="#dia-dos-pais">💙 Dia dos Pais</a>
-            <a href="#em-memoria">🕯️ Em Memória</a>
             <a href="#cardapios">Cardápios</a>
             <a href="#galeria">Galeria</a>
             <a href="#depoimentos">Depoimentos</a>
@@ -974,64 +473,6 @@ Hoje, com duas grandes inspirações na minha vida, Cecília e Diana, sigo coloc
 Sou profundamente grata a Deus, por me sustentar e guiar em cada passo, à minha mãe, que sempre esteve presente, ao meu pai, que mesmo não estando mais aqui, segue sendo parte de tudo o que sou, e ao meu irmão, que também faz parte dessa caminhada.
 Atualmente, trabalho com suspiros artesanais, bolos, brigadeiros, maçãs do amor e cupcakes — com um carinho especial por aquilo que me tornei especialista: os suspiros e as maçãs do amor, feitos com cuidado, delicadeza e muito sabor.
 Mais do que doces, entrego experiências cheias de afeto. 💕</p>
-            </div>
-        </div>
-
-    <!-- SEÇÃO DIA DOS PAIS -->
-    <section class="pais-section" id="dia-dos-pais">
-        <div class="pais-carousel">
-            <div class="pais-slide active"><img src="pais1.jpg" alt="Dia dos Pais Ceci Doces"></div>
-            <div class="pais-slide"><img src="pais2.jpg" alt="Dia dos Pais Ceci Doces"></div>
-            <div class="pais-slide"><img src="pais3.jpg" alt="Dia dos Pais Ceci Doces"></div>
-            <div class="pais-slide"><img src="pais4.jpg" alt="Dia dos Pais Ceci Doces"></div>
-            <div class="pais-slide"><img src="pais5.jpg" alt="Dia dos Pais Ceci Doces"></div>
-            <div class="pais-slide"><img src="pais6.jpg" alt="Dia dos Pais Ceci Doces"></div>
-        </div>
-        <div class="pais-overlay"></div>
-
-        <div class="pais-content">
-            <div class="pais-badge">💙 Edição Especial</div>
-            <h3>Cardápio Dia dos Pais 👔</h3>
-            <p>Doces especiais preparados com muito carinho para celebrar os pais mais incríveis do mundo!</p>
-            <a href="cardapio-pais.pdf" target="_blank" class="btn-pais">
-                👔 Ver Cardápio Dia dos Pais
-            </a>
-        </div>
-
-        <div class="pais-dots">
-            <div class="pais-dot active"></div>
-            <div class="pais-dot"></div>
-            <div class="pais-dot"></div>
-            <div class="pais-dot"></div>
-            <div class="pais-dot"></div>
-            <div class="pais-dot"></div>
-        </div>
-    </section>
-
-    <!-- SEÇÃO EM MEMÓRIA -->
-    <section class="memoria-section" id="em-memoria">
-        <div class="memoria-estrelas-bg" id="memoria-estrelas"></div>
-
-        <div class="memoria-content">
-            <span class="memoria-icone">💙</span>
-            <img src="uziel.jpg" alt="Uziel Pedro" class="memoria-foto">
-            <h3>Em Memória</h3>
-            <div class="memoria-nome">Uziel Pedro</div>
-            <div class="memoria-divisor"></div>
-            <p class="memoria-mensagem">
-                Este cardápio foi feito com todo o amor do mundo em sua homenagem.<br><br>
-                Pai, mesmo que você não esteja mais aqui para provar cada docinho que faço,
-                sei que você está presente em cada receita, em cada detalhe, em cada sorriso
-                que esses doces arrancam das pessoas.<br><br>
-                Você foi e sempre será minha maior inspiração. Tudo o que faço tem um pouquinho
-                de você — do seu amor, da sua força, do seu jeito de ser. Este Dia dos Pais é
-                para você, com saudade e com um amor que não tem fim. 💙
-            </p>
-            <div class="memoria-assinatura">Com amor eterno — sua família 🤍</div>
-            <div class="memoria-velas">
-                <span class="vela">🕯️</span>
-                <span class="vela">💙</span>
-                <span class="vela">🕯️</span>
             </div>
         </div>
     </section>
@@ -1271,26 +712,7 @@ Mais do que doces, entrego experiências cheias de afeto. 💕</p>
             evt.currentTarget.classList.add("active");
         }
 
-        // Decoração Dia dos Pais nas seções
-        const decorPais = [
-            { id: 'sobre', emoji: '💙', pos: 'top:20px;right:20px;font-size:2rem;opacity:0.2;position:absolute;pointer-events:none;' },
-            { id: 'sobre', emoji: '👔', pos: 'bottom:20px;left:20px;font-size:2rem;opacity:0.2;position:absolute;pointer-events:none;' },
-            { id: 'galeria', emoji: '💙', pos: 'top:20px;right:20px;font-size:2rem;opacity:0.2;position:absolute;pointer-events:none;' },
-            { id: 'galeria', emoji: '🎁', pos: 'top:20px;left:20px;font-size:2rem;opacity:0.2;position:absolute;pointer-events:none;' },
-            { id: 'depoimentos', emoji: '💙', pos: 'top:20px;right:20px;font-size:2rem;opacity:0.2;position:absolute;pointer-events:none;' },
-            { id: 'contato', emoji: '👔', pos: 'top:20px;right:20px;font-size:2rem;opacity:0.2;position:absolute;pointer-events:none;' },
-        ];
-        decorPais.forEach(({ id, emoji, pos }) => {
-            const el = document.getElementById(id);
-            if (el) {
-                el.style.position = 'relative';
-                const span = document.createElement('span');
-                span.textContent = emoji;
-                span.style.cssText = pos;
-                el.appendChild(span);
-            }
-        });
-
+        let currentSlide = 0;
         const slides = document.querySelectorAll('#slider-historia img');
         function showNextSlide() {
             if (slides.length > 1) {
@@ -1300,43 +722,6 @@ Mais do que doces, entrego experiências cheias de afeto. 💕</p>
             }
         }
         setInterval(showNextSlide, 3000);
-
-        // Carrossel Dia dos Pais
-        let paisSlide = 0;
-        const paisSlides = document.querySelectorAll('.pais-slide');
-        const paisDots = document.querySelectorAll('.pais-dot');
-
-        function showPaisSlide(index) {
-            paisSlides.forEach(s => s.classList.remove('active'));
-            paisDots.forEach(d => d.classList.remove('active'));
-            paisSlides[index].classList.add('active');
-            paisDots[index].classList.add('active');
-        }
-
-        paisDots.forEach((dot, i) => {
-            dot.addEventListener('click', () => { paisSlide = i; showPaisSlide(i); });
-        });
-
-        setInterval(() => {
-            paisSlide = (paisSlide + 1) % paisSlides.length;
-            showPaisSlide(paisSlide);
-        }, 4000);
-
-        // Estrelas na seção Em Memória
-        const memoriaEstrelas = document.getElementById('memoria-estrelas');
-        if (memoriaEstrelas) {
-            for (let i = 0; i < 50; i++) {
-                const e = document.createElement('div');
-                e.className = 'memoria-estrela';
-                e.style.left = Math.random() * 100 + '%';
-                e.style.top = Math.random() * 100 + '%';
-                e.style.animationDelay = Math.random() * 4 + 's';
-                e.style.animationDuration = (2 + Math.random() * 3) + 's';
-                const size = (Math.random() * 2.5 + 1) + 'px';
-                e.style.width = e.style.height = size;
-                memoriaEstrelas.appendChild(e);
-            }
-        }
     </script>
 </body>
 </html>
